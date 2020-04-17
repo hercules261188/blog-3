@@ -243,22 +243,21 @@ window.onload = wrap_img;
 <h2 id="Univariate-Regression">
 <a class="anchor" href="#Univariate-Regression" aria-hidden="true"><span class="octicon octicon-link"></span></a>Univariate Regression<a class="anchor-link" href="#Univariate-Regression"> </a>
 </h2>
-<blockquote>
-<p><code>h(Ø) = Øx + b</code></p>
-</blockquote>
+<p>$h(\theta) = \theta*X + b$</p>
 <h3 id="MSE-cost-function">
 <a class="anchor" href="#MSE-cost-function" aria-hidden="true"><span class="octicon octicon-link"></span></a>MSE cost function<a class="anchor-link" href="#MSE-cost-function"> </a>
 </h3>
-<p><code>sum[(h(x) - y)^2]</code></p>
+<p>$\sum (h(x) - y)^2$</p>
 <h3 id="Gradient-Descent">
 <a class="anchor" href="#Gradient-Descent" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gradient Descent<a class="anchor-link" href="#Gradient-Descent"> </a>
 </h3>
-<pre><code>repeat {
+<pre><code>
+repeat {
 
     Ø = Ø - ∆J(Ø) = Ø - LR*1/m * sum((h(Ø, b) - Y)*X)    
 
     b = b - ∆J(b) =  b - LR*1/m * sum((h(Ø, b) - Y))
-  }</code></pre>
+}</code></pre>
 
 </div>
 </div>
