@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://aniketmaurya.ml/markdown/2020/01/14/test-markdown-post.html</loc>
+<loc>https://aniketmaurya.github.io/blog/markdown/2020/01/14/test-markdown-post.html</loc>
 <lastmod>2020-01-14T00:00:00-06:00</lastmod>
 </url>
 <url>
-<loc>http://aniketmaurya.ml/jupyter/2020/02/20/test.html</loc>
+<loc>https://aniketmaurya.github.io/blog/jupyter/2020/02/20/test.html</loc>
 <lastmod>2020-02-20T00:00:00-06:00</lastmod>
 </url>
 <url>
-<loc>http://aniketmaurya.ml/machine%20learning/2020/03/27/Linear-Regression-Scratch.html</loc>
+<loc>https://aniketmaurya.github.io/blog/machine%20learning/2020/03/27/Linear-Regression-Scratch.html</loc>
 <lastmod>2020-03-27T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>http://aniketmaurya.ml/about/</loc>
+<loc>https://aniketmaurya.github.io/blog/about/</loc>
 </url>
 <url>
-<loc>http://aniketmaurya.ml/</loc>
+<loc>https://aniketmaurya.github.io/blog/</loc>
 </url>
 <url>
-<loc>http://aniketmaurya.ml/search/</loc>
+<loc>https://aniketmaurya.github.io/blog/search/</loc>
 </url>
 <url>
-<loc>http://aniketmaurya.ml/categories/</loc>
+<loc>https://aniketmaurya.github.io/blog/categories/</loc>
 </url>
 </urlset>
