@@ -7,15 +7,16 @@
 <meta name="generator" content="Jekyll v4.0.0" />
 <meta property="og:title" content="Image Classification with Tensorflow 2.x" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A minimal example of using markdown with fastpages." />
-<meta property="og:description" content="A minimal example of using markdown with fastpages." />
+<meta name="description" content="Image Classification with Tensorflow 2.x." />
+<meta property="og:description" content="Image Classification with Tensorflow 2.x." />
 <link rel="canonical" href="https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html" />
 <meta property="og:url" content="https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html" />
 <meta property="og:site_name" content="Overfitted" />
+<meta property="og:image" content="https://4.bp.blogspot.com/-mya0XZqrtJs/XoN9SufkS2I/AAAAAAAAC5w/y5POjjt0Rs8B8uLLO1gegGb74MYTx7W7gCLcBGAsYHQ/s1600/TF_FullColor_Icon.jpg" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-05-12T00:00:00-05:00" />
 <script type="application/ld+json">
-{"headline":"Image Classification with Tensorflow 2.x","description":"A minimal example of using markdown with fastpages.","datePublished":"2019-05-12T00:00:00-05:00","dateModified":"2019-05-12T00:00:00-05:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html"},"url":"https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html","@context":"https://schema.org"}</script>
+{"headline":"Image Classification with Tensorflow 2.x","description":"Image Classification with Tensorflow 2.x.","datePublished":"2019-05-12T00:00:00-05:00","dateModified":"2019-05-12T00:00:00-05:00","image":"https://4.bp.blogspot.com/-mya0XZqrtJs/XoN9SufkS2I/AAAAAAAAC5w/y5POjjt0Rs8B8uLLO1gegGb74MYTx7W7gCLcBGAsYHQ/s1600/TF_FullColor_Icon.jpg","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html"},"url":"https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://aniketmaurya.github.io/blog/feed.xml" title="Overfitted" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -28,15 +29,16 @@
 <meta name="generator" content="Jekyll v4.0.0" />
 <meta property="og:title" content="Image Classification with Tensorflow 2.x" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A minimal example of using markdown with fastpages." />
-<meta property="og:description" content="A minimal example of using markdown with fastpages." />
+<meta name="description" content="Image Classification with Tensorflow 2.x." />
+<meta property="og:description" content="Image Classification with Tensorflow 2.x." />
 <link rel="canonical" href="https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html" />
 <meta property="og:url" content="https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html" />
 <meta property="og:site_name" content="Overfitted" />
+<meta property="og:image" content="https://4.bp.blogspot.com/-mya0XZqrtJs/XoN9SufkS2I/AAAAAAAAC5w/y5POjjt0Rs8B8uLLO1gegGb74MYTx7W7gCLcBGAsYHQ/s1600/TF_FullColor_Icon.jpg" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-05-12T00:00:00-05:00" />
 <script type="application/ld+json">
-{"headline":"Image Classification with Tensorflow 2.x","description":"A minimal example of using markdown with fastpages.","datePublished":"2019-05-12T00:00:00-05:00","dateModified":"2019-05-12T00:00:00-05:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html"},"url":"https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html","@context":"https://schema.org"}</script>
+{"headline":"Image Classification with Tensorflow 2.x","description":"Image Classification with Tensorflow 2.x.","datePublished":"2019-05-12T00:00:00-05:00","dateModified":"2019-05-12T00:00:00-05:00","image":"https://4.bp.blogspot.com/-mya0XZqrtJs/XoN9SufkS2I/AAAAAAAAC5w/y5POjjt0Rs8B8uLLO1gegGb74MYTx7W7gCLcBGAsYHQ/s1600/TF_FullColor_Icon.jpg","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html"},"url":"https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -113,7 +115,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Image Classification with Tensorflow 2.x</h1><p class="page-description">A minimal example of using markdown with fastpages.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2019-05-12T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Image Classification with Tensorflow 2.x</h1><p class="page-description">Image Classification with Tensorflow 2.x.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2019-05-12T00:00:00-05:00" itemprop="datePublished">
         May 12, 2019
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -151,7 +153,9 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#compiling-the-model">Compiling the model</a></li>
 <li class="toc-entry toc-h3"><a href="#train-and-evaluate">Train and Evaluate</a>
 <ul>
-<li class="toc-entry toc-h4"><a href="#training-model-for-30-epochs">Training model for 30 epochs*</a></li>
+<li class="toc-entry toc-h5"><a href="#training-model">Training model</a></li>
+<li class="toc-entry toc-h5"><a href="#loss-visualization">Loss visualization</a></li>
+<li class="toc-entry toc-h4"><a href="#model-evaluation">Model Evaluation</a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h3"><a href="#save-the-trained-model">Save the trained Model</a></li>
@@ -248,16 +252,18 @@ window.onload = wrap_img;
 
 <p>After the model compilation, we can all fit() method by specifying the epochs, batch size, etc.</p>
 
-<h4 id="training-model-for-30-epochs">
-<a class="anchor" href="#training-model-for-30-epochs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Training model for 30 epochs*</h4>
+<h5 id="training-model">
+<a class="anchor" href="#training-model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Training model</h5>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span>
 <span class="n">epochs</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">X_valid</span><span class="p">,</span> <span class="n">y_valid</span><span class="o">*</span><span class="p">))</span><span class="o">*</span>
 </code></pre></div></div>
 
-<p>This method will train the model for 30 epochs. Train loss, Validation loss and train accuracy, validation accuracy can be found in <strong>history.history</strong>.</p>
+<p>This method will train the model for 30 epochs. Train loss, Validation loss and train accuracy, validation accuracy can be found in <em>history.history</em>.</p>
 
-<p>We can create a visualization for the learning curve using <strong>history</strong>.</p>
+<h5 id="loss-visualization">
+<a class="anchor" href="#loss-visualization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Loss visualization</h5>
+<p>We can create a visualization for the learning curve using <em>history</em>.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
@@ -272,6 +278,8 @@ window.onload = wrap_img;
 
 <p>Now, we can try out different hyperparameters to achieve more accuracy on the dataset.</p>
 
+<h4 id="model-evaluation">
+<a class="anchor" href="#model-evaluation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model Evaluation</h4>
 <p>If you are satisfied with the training and validation accuracy then evaluate it on the test set.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
@@ -283,17 +291,16 @@ window.onload = wrap_img;
 <h3 id="save-the-trained-model">
 <a class="anchor" href="#save-the-trained-model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Save the trained Model</h3>
 
-<p>After you have trained and evaluated your NN model on test set you can download your model using Keras save() method and then can load it anytime for inference.</p>
+<p>After you have trained and evaluated your NN model on test set you can download your model using Keras <code class="highlighter-rouge">tf.keras.models.save_model</code> method and then can load it anytime for inference.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># save your model as HDF5 format
-</span><span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">"my_keras_model.h5"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">save_model</span><span class="p">(</span><span class="s">"my_image_classifier"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>It saves both the model’s architecture and the value of all the model parameters for every layer (All trained weights and biases).</p>
+<p>It saves both the model’s architecture and the value of all the model parameters for every layer (All trained weights and biases). This <em>saved_model</em> can be loaded to TF serving for deployement purpose.</p>
 
 <p>If you want to use your trained model for inference, just load it:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">model</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s">"my_keras_model.h5"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s">"my_image_classifier"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Now, it’s time to train different datasets on your own. Good Luck 😄!</p>
@@ -316,7 +323,15 @@ window.onload = wrap_img;
 <p><br><br>
 You can contact me at <a href="http://twitter.com/iamaniketmaurya">twitter.com/aniketmaurya</a> or drop an 📧 at <a href="http://aniketmaurya@outlook.com">aniketmaurya@outlook.com</a></p>
 
-  </div><a class="u-url" href="/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html" hidden></a>
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="aniketmaurya/blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
