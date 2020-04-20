@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Image Classification with Tensorflow 2.x | Overfitted</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Image Classification with Tensorflow 2.x" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A minimal example of using markdown with fastpages." />
+<meta property="og:description" content="A minimal example of using markdown with fastpages." />
+<link rel="canonical" href="https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html" />
+<meta property="og:url" content="https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html" />
+<meta property="og:site_name" content="Overfitted" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-05-12T00:00:00-05:00" />
+<script type="application/ld+json">
+{"headline":"Image Classification with Tensorflow 2.x","description":"A minimal example of using markdown with fastpages.","datePublished":"2019-05-12T00:00:00-05:00","dateModified":"2019-05-12T00:00:00-05:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html"},"url":"https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://aniketmaurya.github.io/blog/feed.xml" title="Overfitted" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-156199072-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+<link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Image Classification with Tensorflow 2.x | Overfitted</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Image Classification with Tensorflow 2.x" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A minimal example of using markdown with fastpages." />
+<meta property="og:description" content="A minimal example of using markdown with fastpages." />
+<link rel="canonical" href="https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html" />
+<meta property="og:url" content="https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html" />
+<meta property="og:site_name" content="Overfitted" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-05-12T00:00:00-05:00" />
+<script type="application/ld+json">
+{"headline":"Image Classification with Tensorflow 2.x","description":"A minimal example of using markdown with fastpages.","datePublished":"2019-05-12T00:00:00-05:00","dateModified":"2019-05-12T00:00:00-05:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html"},"url":"https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://aniketmaurya.github.io/blog/feed.xml" title="Overfitted" /><!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-156199072-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">Overfitted</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/about/">About Me</a><a class="page-link" href="/blog/search/">Search</a><a class="page-link" href="/blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Image Classification with Tensorflow 2.x</h1><p class="page-description">A minimal example of using markdown with fastpages.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2019-05-12T00:00:00-05:00" itemprop="datePublished">
+        May 12, 2019
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog/categories/#Tensorflow">Tensorflow</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blog/categories/#Deep Learning">Deep Learning</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#image-classification-with-tf-2">Image Classification with TF 2</a></li>
+<li class="toc-entry toc-h1"><a href="#building-a-simple-image-classifier">Building a simple image classifier</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#import-libraries-and-download-f-mnist-dataset">Import libraries and download F-MNIST dataset.</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#download-dataset-with-keras-utility-function">Download dataset with Keras utility function*</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#create-a-model-using-keras-sequential-api">Create a model using Keras Sequential API</a></li>
+<li class="toc-entry toc-h3"><a href="#compiling-the-model">Compiling the model</a></li>
+<li class="toc-entry toc-h3"><a href="#train-and-evaluate">Train and Evaluate</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#training-model-for-30-epochs">Training model for 30 epochs*</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#save-the-trained-model">Save the trained Model</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#recommended-resources">Recommended Resources</a></li>
+</ul><h1 id="image-classification-with-tf-2">
+<a class="anchor" href="#image-classification-with-tf-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Image Classification with TF 2</h1>
+
+<p>Unlike previous versions, TensorFlow 2.0 is coming out with some major changes. It is going to be more pythonic and no need to turn on eager execution explicitly. With tight integration of Keras now it will focus on simplicity and ease of use.</p>
+
+<p><a href="https://keras.io">Keras</a> is a high-level API that allows to easily build, train, evaluate and execute all sorts of neural networks. Keras was developed by François Chollet and open-sourced in March 2015. With its simplicity and easy-to-use feature, it gained popularity very quickly. Tensorflow comes with its own implementation of Keras with some TF specific features.</p>
+<blockquote>
+  <p>Keras can run on top of MXNet, CNTK or Theano.</p>
+</blockquote>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*t4P9JrUaMS_OyL4T9YsnKA.png" alt="Keras"></p>
+
+<h1 id="building-a-simple-image-classifier">
+<a class="anchor" href="#building-a-simple-image-classifier" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building a simple image classifier</h1>
+
+<p>We will create a simple Neural Networks architecture for image classification. Fashion MNIST is a collection of 70,000 grayscale images of 28x28 pixel each, with 10 classes of different clothing items. We will train our Neural Network on this dataset.</p>
+<blockquote>
+  <p>CNN performs better than Dense NN for image classification both in terms of time and accuracy. I have used Dense NN architecture here for demonstration.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong><a href="https://becominghuman.ai/not-just-introduction-to-convolutional-neural-networks-part-1-56a36b938592">Check this article to learn about Convolutional Neural Networks.</a></strong></p>
+</blockquote>
+
+<h3 id="import-libraries-and-download-f-mnist-dataset">
+<a class="anchor" href="#import-libraries-and-download-f-mnist-dataset" aria-hidden="true"><span class="octicon octicon-link"></span></a>Import libraries and download F-MNIST dataset.</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+<span class="kn">from</span> <span class="nn">tensorflow</span> <span class="kn">import</span> <span class="n">keras</span>  <span class="o">*</span><span class="c1"># tensorflow implementation of keras*
+</span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</code></pre></div></div>
+
+<h4 id="download-dataset-with-keras-utility-function">
+<a class="anchor" href="#download-dataset-with-keras-utility-function" aria-hidden="true"><span class="octicon octicon-link"></span></a>Download dataset with Keras utility function*</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fashion_mnist</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">fashion_mnist</span>
+<span class="p">(</span><span class="n">X_train_full</span><span class="p">,</span> <span class="n">y_train_full</span><span class="p">),</span> <span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span> <span class="o">=</span> <span class="n">fashion_mnist</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">X_train_full</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(60000, 28, 28)
+</code></pre></div></div>
+
+<p>It is always a good practice to split the dataset into training, validation and test set. Since we already have our test set so let’s create a validation set. We can scale the pixel intensities of the data to the 0–1 range by dividing <em>255.0</em>. Scaling leads to better gradient update.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X_valid</span><span class="p">,</span> <span class="n">X_train</span> <span class="o">=</span> <span class="n">X_train_full</span><span class="p">[:</span><span class="mi">5000</span><span class="p">]</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">,</span> <span class="n">X_train_full</span><span class="p">[</span><span class="mi">5000</span><span class="p">:]</span> <span class="o">/</span> <span class="mf">255.0</span>
+
+<span class="n">y_valid</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">y_train_full</span><span class="p">[:</span><span class="mi">5000</span><span class="p">],</span> <span class="n">y_train_full</span><span class="p">[</span><span class="mi">5000</span><span class="p">:]</span>
+</code></pre></div></div>
+
+<p>We can view any photo using matplotlib.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*TWIU4HAXLrYTTFRGUa3DKw.png" alt=""></p>
+
+<h3 id="create-a-model-using-keras-sequential-api">
+<a class="anchor" href="#create-a-model-using-keras-sequential-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a model using Keras Sequential API</h3>
+
+<p>Now it’s the time to build our simple image classification Artificial Neural Networks.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">model</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(</span><span class="n">input_shape</span><span class="o">=</span><span class="p">[</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">]))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">"relu"</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">"relu"</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">"softmax"</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>If you didn’t get it then don’t worry, let me explain the code line by line.</p>
+
+<p>The <strong>Sequential</strong> model is a linear stack of layers, connected sequentially.</p>
+
+<p>The next layer, i.e. **Flatten **is just converting the 28x28 dimension array into a 1D array. If it receives input data X, then it computes X.reshape(-1, 1). It takes an **input_shape **argument to specify the size of the input data. However, input_shape can be automatically detected by Keras.</p>
+
+<p>The** Dense **layer is the fully-connected neurons in the neural networks. Here, there are two hidden layers with 300 neurons in first and 100 neurons in the second hidden layer respectively.</p>
+
+<p>The last Dense layer made up of 10 neurons in the output layer. It is responsible for calculating loss and predictions.</p>
+
+<h3 id="compiling-the-model">
+<a class="anchor" href="#compiling-the-model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Compiling the model</h3>
+
+<p>Keras has a compile() method which specifies loss function to use, optimizer, and metrics.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">model</span><span class="o">.</span><span class="nb">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="n">keras</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">sparse_categorical_crossentropy</span><span class="p">,</span>
+<span class="n">optimizer</span><span class="o">=</span><span class="s">"sgd"</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s">"accuracy"</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h3 id="train-and-evaluate">
+<a class="anchor" href="#train-and-evaluate" aria-hidden="true"><span class="octicon octicon-link"></span></a>Train and Evaluate</h3>
+
+<p>After the model compilation, we can all fit() method by specifying the epochs, batch size, etc.</p>
+
+<h4 id="training-model-for-30-epochs">
+<a class="anchor" href="#training-model-for-30-epochs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Training model for 30 epochs*</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span>
+<span class="n">epochs</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">X_valid</span><span class="p">,</span> <span class="n">y_valid</span><span class="o">*</span><span class="p">))</span><span class="o">*</span>
+</code></pre></div></div>
+
+<p>This method will train the model for 30 epochs. Train loss, Validation loss and train accuracy, validation accuracy can be found in <strong>history.history</strong>.</p>
+
+<p>We can create a visualization for the learning curve using <strong>history</strong>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span><span class="c1"># set the vertical range to [0-1]*
+</span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="https://cdn-images-1.medium.com/max/4590/1*CLrZIrYpxK8SIsOqDMBncg.png" alt="Source: “Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow”"><em>Source: “Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow”</em></p>
+
+<p>We can see that the space between validation and training curves are small that’s why there isn’t overfitting problem.</p>
+
+<p>Now, we can try out different hyperparameters to achieve more accuracy on the dataset.</p>
+
+<p>If you are satisfied with the training and validation accuracy then evaluate it on the test set.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
+</code></pre></div></div>
+<blockquote>
+  <p><em>Accuracy on test set might be lower than on validation set because the hyperparameters are tuned for validation set.</em></p>
+</blockquote>
+
+<h3 id="save-the-trained-model">
+<a class="anchor" href="#save-the-trained-model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Save the trained Model</h3>
+
+<p>After you have trained and evaluated your NN model on test set you can download your model using Keras save() method and then can load it anytime for inference.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># save your model as HDF5 format
+</span><span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">"my_keras_model.h5"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>It saves both the model’s architecture and the value of all the model parameters for every layer (All trained weights and biases).</p>
+
+<p>If you want to use your trained model for inference, just load it:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">model</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s">"my_keras_model.h5"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Now, it’s time to train different datasets on your own. Good Luck 😄!</p>
+
+<hr>
+
+<p><br></p>
+<h1 id="recommended-resources">
+<a class="anchor" href="#recommended-resources" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recommended Resources</h1>
+
+<ol>
+  <li>
+    <p>Deep learning specialization (Coursera)</p>
+  </li>
+  <li>
+    <p>“Hands-On Machine Learning with Scikit-Learn and TensorFlow” by <a href="undefined">Aurélien Géron</a> (Book from O’Reilly)</p>
+  </li>
+</ol>
+
+<p><br><br>
+You can contact me at <a href="http://twitter.com/iamaniketmaurya">twitter.com/aniketmaurya</a> or drop an 📧 at <a href="http://aniketmaurya@outlook.com">aniketmaurya@outlook.com</a></p>
+
+  </div><a class="u-url" href="/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Blogs on AI and Programming.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/aniketmaurya" title="aniketmaurya"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/aniketmaurya" title="aniketmaurya"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
