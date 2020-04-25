@@ -1,4 +1,96 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://aniketmaurya.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://aniketmaurya.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-04-22T08:21:12-05:00</updated><id>https://aniketmaurya.github.io/blog/feed.xml</id><title type="html">Overfitted</title><subtitle>Blogs on AI and Programming.</subtitle><entry><title type="html">Linear Regression from Scratch</title><link href="https://aniketmaurya.github.io/blog/machine%20learning/2020/03/27/Linear-Regression-Scratch.html" rel="alternate" type="text/html" title="Linear Regression from Scratch" /><published>2020-03-27T00:00:00-05:00</published><updated>2020-03-27T00:00:00-05:00</updated><id>https://aniketmaurya.github.io/blog/machine%20learning/2020/03/27/Linear-Regression-Scratch</id><content type="html" xml:base="https://aniketmaurya.github.io/blog/machine%20learning/2020/03/27/Linear-Regression-Scratch.html">&lt;!--
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://aniketmaurya.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://aniketmaurya.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-04-25T12:35:23-05:00</updated><id>https://aniketmaurya.github.io/blog/feed.xml</id><title type="html">Overfitted</title><subtitle>Blogs on AI and Programming.</subtitle><entry><title type="html">tf.data: Creating data input pipelines</title><link href="https://aniketmaurya.github.io/blog/tensorflow/2020/04/08/tf.data-Creating-Data-Input-Pipelines.html" rel="alternate" type="text/html" title="tf.data: Creating data input pipelines" /><published>2020-04-08T00:00:00-05:00</published><updated>2020-04-08T00:00:00-05:00</updated><id>https://aniketmaurya.github.io/blog/tensorflow/2020/04/08/tf.data-Creating-Data-Input-Pipelines</id><content type="html" xml:base="https://aniketmaurya.github.io/blog/tensorflow/2020/04/08/tf.data-Creating-Data-Input-Pipelines.html">&lt;h1 id=&quot;tfdata-creating-data-input-pipelines&quot;&gt;tf.data: Creating data input pipelines&lt;/h1&gt;
+
+&lt;p&gt;Are you not able to load your NumPy data into memory?
+Does your model have to wait for data to be loaded after each epoch?
+Is your Keras DataGenerator slow?&lt;/p&gt;
+
+&lt;p&gt;TensorFlow [&lt;strong&gt;&lt;em&gt;tf.data](https://www.tensorflow.org/api_docs/python/tf/data)&lt;/em&gt;&lt;/strong&gt; API allows building complex input pipelines. It easily handles a large amount of data and can read different formats of data while allowing complex data transformations.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-do-we-need-tfdata&quot;&gt;Why do we need tf.data?&lt;/h2&gt;
+
+&lt;p&gt;A training step involves the following steps:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;File reading&lt;/li&gt;
+  &lt;li&gt;Fetch or parse data&lt;/li&gt;
+  &lt;li&gt;Data transformation&lt;/li&gt;
+  &lt;li&gt;Using the data to train the model.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/4580/1*Wm8r4SSP2FjKXDu3H4swUA.png&quot; alt=&quot;source: [Tensorflow](https://www.tensorflow.org/guide/data_performance) (CC0)&quot; /&gt;&lt;em&gt;source: &lt;a href=&quot;https://www.tensorflow.org/guide/data_performance&quot;&gt;Tensorflow&lt;/a&gt; (CC0)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;If you have a large amount of data and you’re unable to load it into the memory, you may want to use &lt;a href=&quot;https://www.tensorflow.org/guide/data#consuming_python_generators&quot;&gt;Generators&lt;/a&gt;. But Generators has limited portability and scalability.
+After every epoch, you will wait for data to be transformed into a consumable format by the model and during that time your model sits idle, not doing any training. This leads to low CPU and GPU utilization.
+One solution to handle this is to [&lt;strong&gt;prefetch](https://www.tensorflow.org/guide/data_performance#prefetching)&lt;/strong&gt; your data in advance and you won’t have to wait for data to be loaded.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/4088/1*7ijyt5E5XvQs23I0dD2GhA.png&quot; alt=&quot;source: [Tensorflow](https://www.tensorflow.org/guide/data_performance) (CC0)&quot; /&gt;&lt;em&gt;source: &lt;a href=&quot;https://www.tensorflow.org/guide/data_performance&quot;&gt;Tensorflow&lt;/a&gt; (CC0)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;tf.data&lt;/strong&gt; is a data input pipeline building API than you can use to easily build your data pipeline. Whether you want to read data from local files or even if your data is stored remotely.&lt;/p&gt;
+
+&lt;h2 id=&quot;loading-data-for-classification&quot;&gt;Loading data for classification&lt;/h2&gt;
+
+&lt;p&gt;To train an image classification model, we create a CNN model and feed our data to the model. I want to train a Cats vs Dogs classifier and my data is stored in the following folder structure.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;*data
+└── train
+    ├── cat -&amp;gt; contains images of cats
+    └── dog -&amp;gt; contains images of dogs*
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;We first find the path of all the images-&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;from glob import glob
+import tensorflow as tf
+
+image_path_list = glob('data/train/*/*.jpg')
+data = tf.data.Dataset.list_files(image_path_list)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;tf.data.Dataset.list_files&lt;/strong&gt; converts the list returned by glob method to the Dataset object. Now, we will load the images and their class.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def load_images(path):
+    
+    image = tf.io.read_file(path)
+    image = tf.io.decode_image(image)
+    label = tf.strings.split(path, os.path.sep)[-2]
+
+    return image, label
+
+data = data.map(load_images)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;So, the &lt;strong&gt;&lt;em&gt;data&lt;/em&gt;&lt;/strong&gt; object now has images and labels. But this is not it, we will have to resize the image, preprocess and apply transformations.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def preprocess(image, label):
+    image = tf.image.resize(image, (IMG_HEIGHT, IMG_WIDTH))
+    image = tf.image.random_flip_left_right(image)
+    image = tf.image.random_flip_up_down(image)
+
+    image /= 255.
+    image -= 0.5
+
+    return image, label
+
+data = data.map(preprocess)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I have created a small library named [&lt;strong&gt;&lt;em&gt;Chitra](https://github.com/aniketmaurya/chitra),&lt;/em&gt;&lt;/strong&gt; based on &lt;em&gt;tf.data&lt;/em&gt; that can be used to skip all these steps.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;from chitra import dataloader as dl
+path = './data/train'
+
+train_dl = dl.Clf()
+data = train_dl.from_folder(path, target_shape=(224, 244), shuffle = True)
+
+# to visualize the data
+train_dl.show_batch(6, figsize=(6,6))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;You can just specify the path of your data and it will be loaded with the target size.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*RSmpjnP9xKHV8Y22IRn9pA.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;h1 id=&quot;you-can-find-my-code-at-httpsgithubcomaniketmauryachitra&quot;&gt;&lt;em&gt;You can find my code at &lt;a href=&quot;https://github.com/aniketmaurya/chitra&quot;&gt;https://github.com/aniketmaurya/chitra&lt;/a&gt;&lt;/em&gt;&lt;/h1&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><summary type="html">tf.data: Creating data input pipelines</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://aniketmaurya.github.io/blog/images/chart-preview.png" /><media:content medium="image" url="https://aniketmaurya.github.io/blog/images/chart-preview.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Linear Regression from Scratch</title><link href="https://aniketmaurya.github.io/blog/machine%20learning/2020/03/27/Linear-Regression-Scratch.html" rel="alternate" type="text/html" title="Linear Regression from Scratch" /><published>2020-03-27T00:00:00-05:00</published><updated>2020-03-27T00:00:00-05:00</updated><id>https://aniketmaurya.github.io/blog/machine%20learning/2020/03/27/Linear-Regression-Scratch</id><content type="html" xml:base="https://aniketmaurya.github.io/blog/machine%20learning/2020/03/27/Linear-Regression-Scratch.html">&lt;!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
