@@ -12,10 +12,11 @@
 <link rel="canonical" href="https://aniketmaurya.github.io/blog/tensorflow/face%20recognition/2019/01/07/face-recognition.html" />
 <meta property="og:url" content="https://aniketmaurya.github.io/blog/tensorflow/face%20recognition/2019/01/07/face-recognition.html" />
 <meta property="og:site_name" content="Overfitted" />
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/2000/1*t3DEmVOWOuWjIo_TjcpxNQ.gif" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-01-07T00:00:00-06:00" />
 <script type="application/ld+json">
-{"headline":"Face Recognition","description":"Learn to create Face Recognition system from scratch","datePublished":"2019-01-07T00:00:00-06:00","dateModified":"2019-01-07T00:00:00-06:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://aniketmaurya.github.io/blog/tensorflow/face%20recognition/2019/01/07/face-recognition.html"},"url":"https://aniketmaurya.github.io/blog/tensorflow/face%20recognition/2019/01/07/face-recognition.html","@context":"https://schema.org"}</script>
+{"headline":"Face Recognition","description":"Learn to create Face Recognition system from scratch","datePublished":"2019-01-07T00:00:00-06:00","dateModified":"2019-01-07T00:00:00-06:00","image":"https://cdn-images-1.medium.com/max/2000/1*t3DEmVOWOuWjIo_TjcpxNQ.gif","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://aniketmaurya.github.io/blog/tensorflow/face%20recognition/2019/01/07/face-recognition.html"},"url":"https://aniketmaurya.github.io/blog/tensorflow/face%20recognition/2019/01/07/face-recognition.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://aniketmaurya.github.io/blog/feed.xml" title="Overfitted" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -33,10 +34,11 @@
 <link rel="canonical" href="https://aniketmaurya.github.io/blog/tensorflow/face%20recognition/2019/01/07/face-recognition.html" />
 <meta property="og:url" content="https://aniketmaurya.github.io/blog/tensorflow/face%20recognition/2019/01/07/face-recognition.html" />
 <meta property="og:site_name" content="Overfitted" />
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/2000/1*t3DEmVOWOuWjIo_TjcpxNQ.gif" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-01-07T00:00:00-06:00" />
 <script type="application/ld+json">
-{"headline":"Face Recognition","description":"Learn to create Face Recognition system from scratch","datePublished":"2019-01-07T00:00:00-06:00","dateModified":"2019-01-07T00:00:00-06:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://aniketmaurya.github.io/blog/tensorflow/face%20recognition/2019/01/07/face-recognition.html"},"url":"https://aniketmaurya.github.io/blog/tensorflow/face%20recognition/2019/01/07/face-recognition.html","@context":"https://schema.org"}</script>
+{"headline":"Face Recognition","description":"Learn to create Face Recognition system from scratch","datePublished":"2019-01-07T00:00:00-06:00","dateModified":"2019-01-07T00:00:00-06:00","image":"https://cdn-images-1.medium.com/max/2000/1*t3DEmVOWOuWjIo_TjcpxNQ.gif","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://aniketmaurya.github.io/blog/tensorflow/face%20recognition/2019/01/07/face-recognition.html"},"url":"https://aniketmaurya.github.io/blog/tensorflow/face%20recognition/2019/01/07/face-recognition.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -139,34 +141,35 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
-<li class="toc-entry toc-h2"><a href="#face-verification-vs-face-recognition">Face Verification vs. Face Recognition</a>
+<li class="toc-entry toc-h2"><a href="#face-verification-vs-face-recognition">Face Verification vs. Face Recognition</a></li>
+<li class="toc-entry toc-h2"><a href="#why-pixel-by-pixel-comparison-of-images-isabadidea">Why pixel-by-pixel comparison of images is a bad idea?</a></li>
+<li class="toc-entry toc-h2"><a href="#face-embedding-come-to-the-rescue">Face Embedding come to the rescue</a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#why-pixel-by-pixel-comparison-of-images-isabadidea">Why pixel-by-pixel comparison of images is a bad idea?</a></li>
-<li class="toc-entry toc-h3"><a href="#face-embedding-come-to-the-rescue">Face Embedding come to the rescue</a></li>
-<li class="toc-entry toc-h3"><a href="#how-to-finetune-these-embeddings">How to finetune these embeddings?</a></li>
+<li class="toc-entry toc-h3"><a href="#how-to-finetune-embeddings">How to finetune embeddings?</a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h2"><a href="#by-now-you-know-the-underlying-concepts-of-face-recognition-i-will-tell-you-how-to-create-a-face-verification-and-recognition-system-its-super-easy">By now you know the underlying concepts of Face Recognition, I will tell you how to create a Face Verification and Recognition system. It’s super easy.</a></li>
-<li class="toc-entry toc-h2"><a href="#if-you-have-learned-something-then-feel-free-to-press-for-as-long-as-you-want">If you have learned something then feel free to press👏 for as long as you want😃.</a></li>
-<li class="toc-entry toc-h2"><a href="#if-you-find-anything-wrong-please-mention-it-in-the-comments-i-would-️-to-improve">If you find anything wrong, please mention it in the comments. I would ❤️ to improve.</a></li>
-</ul><p>AI is revolutionizing the world. Face recognition is one such spectrum of it. Almost everyone uses face recognition systems — on our mobile, Facebook, Photo gallery apps or advanced security cameras. Learn how these systems are able to recognize our faces. This article is inspired by the deeplearning.ai course on FaceNet.</p>
+<li class="toc-entry toc-h2"><a href="#face-verification">Face Verification</a></li>
+<li class="toc-entry toc-h2"><a href="#face-recognition">Face Recognition</a></li>
+</ul><p>AI is revolutionizing the world. Face recognition is one such spectrum of it. Almost everyone uses face recognition systems — on our mobile, Facebook, Photo gallery apps or advanced security cameras. Learn how these systems are able to recognize our faces.</p>
+
+<p><em>This article is inspired by the deeplearning.ai course on FaceNet.</em></p>
 
 <p><img src="https://cdn-images-1.medium.com/max/2000/1*t3DEmVOWOuWjIo_TjcpxNQ.gif" alt=""></p>
 
 <h2 id="face-verification-vs-face-recognition">
 <a class="anchor" href="#face-verification-vs-face-recognition" aria-hidden="true"><span class="octicon octicon-link"></span></a>Face Verification vs. Face Recognition</h2>
 
-<p><em>Face Verification</em>** **checks “is this the claimed person?”. For example, in school, you go with your ID card and the invigilator verifies your face with the ID card. This is Face Verification. A mobile phone that unlocks using our face is also using face verification. It is 1:1 matching problem.</p>
+<p><strong>Face Verification</strong> checks “is this the claimed person?”. For example, in school, you go with your ID card and the invigilator verifies your face with the ID card. This is Face Verification. A mobile phone that unlocks using our face is also using face verification. It is 1:1 matching problem.</p>
 
-<p>Now suppose the invigilator knows everyone by their name. So, you decide to go there without an ID card. The invigilator identifies your face and lets you in. This is Face Recognition. <em>Face Recognition</em>** **deals with “who is this person?” problem. We can say that it is a 1:K problem.</p>
+<p>Now suppose the invigilator knows everyone by their name. So, you decide to go there without an ID card. The invigilator identifies your face and lets you in. This is Face Recognition. <strong>Face Recognition</strong> deals with “who is this person?” problem. We can say that it is a 1:K problem.</p>
 
-<h3 id="why-pixel-by-pixel-comparison-of-images-isabadidea">
-<a class="anchor" href="#why-pixel-by-pixel-comparison-of-images-isabadidea" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why pixel-by-pixel comparison of images is a bad idea?</h3>
+<h2 id="why-pixel-by-pixel-comparison-of-images-isabadidea">
+<a class="anchor" href="#why-pixel-by-pixel-comparison-of-images-isabadidea" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why pixel-by-pixel comparison of images is a bad idea?</h2>
 
 <p>A simple way for face verification can be comparing two images pixel-by-pixel and if the threshold between images is less than a threshold then we can say that they’re the same person. But since the pixel values in an image change dramatically even with a slight change of light, position or orientation. So, this method doesn’t work well.</p>
 
-<h3 id="face-embedding-come-to-the-rescue">
-<a class="anchor" href="#face-embedding-come-to-the-rescue" aria-hidden="true"><span class="octicon octicon-link"></span></a>Face Embedding come to the rescue</h3>
+<h2 id="face-embedding-come-to-the-rescue">
+<a class="anchor" href="#face-embedding-come-to-the-rescue" aria-hidden="true"><span class="octicon octicon-link"></span></a>Face Embedding come to the rescue</h2>
 
 <p>The <em>embedding</em> is represented by f (x), a d-dimensional vector. It encodes an image ‘x’ into a d-dimensional Euclidean space. The face embedding of two images of the same person are similar to each other and that of different persons are very different.</p>
 
@@ -174,82 +177,85 @@ window.onload = wrap_img;
 
 <p>To get our embedding we feed the image into a pre-trained model then run a forward propagation and extract the vector from some deeper Fully-Connected layer. You can learn the basics of CNN <a href="https://medium.com/@aniketmaurya/not-just-introduction-to-convolutional-neural-networks-part-2-a7ac2723e30d">here</a>.</p>
 
-<h3 id="how-to-finetune-these-embeddings">
-<a class="anchor" href="#how-to-finetune-these-embeddings" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to finetune these embeddings?</h3>
+<h3 id="how-to-finetune-embeddings">
+<a class="anchor" href="#how-to-finetune-embeddings" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to finetune embeddings?</h3>
 
-<p>[<em>The Triplet Loss](https://en.wikipedia.org/wiki/Triplet_loss)</em> function takes the responsibility to <em>push</em> the embeddings of two images of the same person (Anchor and Positive) closer together while <em>pulling</em> the embeddings of two images of different persons (Anchor, Negative) further apart.</p>
+<p><em><a href="https://en.wikipedia.org/wiki/Triplet_loss">The Triplet Loss</a></em> function takes the responsibility to <em>push</em> the embeddings of two images of the same person (Anchor and Positive) closer together while <em>pulling</em> the embeddings of two images of different persons (Anchor, Negative) further apart.</p>
 
 <p><img src="https://cdn-images-1.medium.com/max/3840/1*CKnxCH4SNOnTqctwX-ViKQ.png" alt="Source: [Coursera](http://deeplearning.ai)"><em>Source: <a href="http://deeplearning.ai">Coursera</a></em></p>
 
-<p><strong>∥f(X1) — f(X2)∥² **is the degree of similarity between image X1 and X2. If it’s smaller than a chosen threshold then both are the same person. If you’re wondering “what this **∥</strong>A<em>*∥ **weird symbol is?”, it’s called *Frobenius Norm</em> and you don’t need to worry about it.</p>
+<p>$||f(X1) — f(X2)||²$ is the degree of similarity between image X1 and X2. If it’s smaller than a chosen threshold then both are the same person.</p>
+
+<p>If you’re wondering “what this $|A|$ weird symbol is?”, it’s called <em>Frobenius Norm</em>.</p>
 
 <p>The distance between <em>Anchor</em> and <em>Positive</em> images should be less and the distance between <em>Anchor</em> and <em>Negative</em> images should be high.</p>
 
-<p>i.e. <strong>∥f(Anchor) — f(Positive)∥² ≤ ∥f(Anchor) — f(Negative)∥²</strong>.</p>
+<p>i.e. $∥f(Anchor) — f(Positive)∥² ≤ ∥f(Anchor) — f(Negative)∥²$.</p>
 
-<h2 id="by-now-you-know-the-underlying-concepts-of-face-recognition-i-will-tell-you-how-to-create-a-face-verification-and-recognition-system-its-super-easy">
-<a class="anchor" href="#by-now-you-know-the-underlying-concepts-of-face-recognition-i-will-tell-you-how-to-create-a-face-verification-and-recognition-system-its-super-easy" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>By now you know the underlying concepts of Face Recognition, I will tell you how to create a Face Verification and Recognition system. It’s super easy.</strong>
-</h2>
+<p>Training a Face recognition model is computationally expensive so it’s recommended to download a <a href="https://github.com/iwantooxxoox/Keras-OpenFace">pre-trained model</a>.</p>
 
-<p>Training a Face recognition model is computationally expensive so I’ll recommend downloading a <a href="https://github.com/iwantooxxoox/Keras-OpenFace">pre-trained model</a>. Start with creating a database of persons containing an embedding vector for each.</p>
+<p>Start with creating a database of persons containing an embedding vector for each.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*#create a dictionary database
-*db = dict()
-*#encoding(image_path) converts image to embedding
-*db['person1'] = encoding('person1.jpg')
-db['person2'] = encoding('person2.jpg')
-db['person3'] = encoding('person3.jpg')
-db['person4'] = encoding('person4.jpg')
-db['person5'] = encoding('person5.jpg')
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#create a dictionary database
+</span><span class="n">db</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="c1">#encoding(image_path) converts image to embedding
+</span><span class="n">db</span><span class="p">[</span><span class="s">'person1'</span><span class="p">]</span> <span class="o">=</span> <span class="n">encoding</span><span class="p">(</span><span class="s">'person1.jpg'</span><span class="p">)</span>
+<span class="n">db</span><span class="p">[</span><span class="s">'person2'</span><span class="p">]</span> <span class="o">=</span> <span class="n">encoding</span><span class="p">(</span><span class="s">'person2.jpg'</span><span class="p">)</span>
+<span class="n">db</span><span class="p">[</span><span class="s">'person3'</span><span class="p">]</span> <span class="o">=</span> <span class="n">encoding</span><span class="p">(</span><span class="s">'person3.jpg'</span><span class="p">)</span>
+<span class="n">db</span><span class="p">[</span><span class="s">'person4'</span><span class="p">]</span> <span class="o">=</span> <span class="n">encoding</span><span class="p">(</span><span class="s">'person4.jpg'</span><span class="p">)</span>
+<span class="n">db</span><span class="p">[</span><span class="s">'person5'</span><span class="p">]</span> <span class="o">=</span> <span class="n">encoding</span><span class="p">(</span><span class="s">'person5.jpg'</span><span class="p">)</span>
 </code></pre></div></div>
 
+<h2 id="face-verification">
+<a class="anchor" href="#face-verification" aria-hidden="true"><span class="octicon octicon-link"></span></a>Face Verification</h2>
 <p>Now that we have created our database, we can define a function that accepts image embedding and name of the person as the argument and it will verify if they are the same person.</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**def** verify(embedding, person_name):
-     
-*    # numpy.linalg.norm calculates the Frobenius Norm
-*    dist = np.linalg.norm(embedding - db[person_name])
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">verify</span><span class="p">(</span><span class="n">embedding</span><span class="p">,</span> <span class="n">person_name</span><span class="p">):</span>
+        
+    <span class="c1"># numpy.linalg.norm calculates the Frobenius Norm
+</span>    <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">embedding</span> <span class="o">-</span> <span class="n">db</span><span class="p">[</span><span class="n">person_name</span><span class="p">])</span>
     
-*    # Chosen threshold is 0.7  
-*    **if** dist &lt; 0.7:
-        print("Verified! Welcome " + person_name)
-    **else**:
-        print("Person name and face didn't match!")
+    <span class="c1"># Chosen threshold is 0.7  
+</span>    <span class="k">if</span> <span class="n">dist</span> <span class="o">&lt;</span> <span class="mf">0.7</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Verified! Welcome "</span> <span class="o">+</span> <span class="n">person_name</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Person name and face didn't match!"</span><span class="p">)</span>
 </code></pre></div></div>
-
 <p>Hurray 😎! We created our Face Verification system. Now let’s create the Face Recognition System. If you remember, a person doesn’t need any ID in the face recognition system. He just needs to show his face to the camera.</p>
+
+<h2 id="face-recognition">
+<a class="anchor" href="#face-recognition" aria-hidden="true"><span class="octicon octicon-link"></span></a>Face Recognition</h2>
 
 <p>In Face recognition, the distance will be calculated for all the images in the database against the input embedding and the smallest distance has to be searched.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**def** recognize_me(input_embedding):
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">recognize_me</span><span class="p">(</span><span class="n">input_embedding</span><span class="p">):</span>
 
-*    # Set min_dist to infinity
-*    min_dist = np.inf
+    <span class="c1"># Set min_dist to infinity
+</span>    <span class="n">min_dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
     
-    *# Iterate over the database to calulate distance for each person*
-    **for** (name, emb) **in** db.items():
+    <span class="c1"># Iterate over the database to calulate distance for each person*
+</span>    <span class="k">for</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">emb</span><span class="p">)</span> <span class="ow">in</span> <span class="n">db</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         
-        *# Compute the distance*
-        curr_dist = np.linalg.norm(input_embedding - emb)
+        <span class="c1"># Compute the distance*
+</span>        <span class="n">curr_dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">input_embedding</span> <span class="o">-</span> <span class="n">emb</span><span class="p">)</span>
 
-*        # identity is set to the name of the person from the database whose distance is smallest against the input encoding
-*        **if** curr_dist &lt; min_dist:
-            min_dist = curr_dist
-            identity = name
+        <span class="c1"># identity is set to the name of the person from the database whose distance is smallest against the input encoding
+</span>        <span class="k">if</span> <span class="n">curr_dist</span> <span class="o">&lt;</span> <span class="n">min_dist</span><span class="p">:</span>
+            <span class="n">min_dist</span> <span class="o">=</span> <span class="n">curr_dist</span>
+            <span class="n">identity</span> <span class="o">=</span> <span class="n">name</span>
     
-    **if** min_dist &gt; 0.7:
-        print("Sorry! You’re not in the database.")
-    **else**:
-        print ("Hi! Welcome " + identity) &gt; # Congratulations!! 👏👏 You have created your own Face Recognition system.
+    <span class="k">if</span> <span class="n">min_dist</span> <span class="o">&gt;</span> <span class="mf">0.7</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Sorry! You’re not in the database."</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s">"Hi! Welcome "</span> <span class="o">+</span> <span class="n">identity</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h2 id="if-you-have-learned-something-then-feel-free-to-press-for-as-long-as-you-want">
-<a class="anchor" href="#if-you-have-learned-something-then-feel-free-to-press-for-as-long-as-you-want" aria-hidden="true"><span class="octicon octicon-link"></span></a>If you have learned something then feel free to press👏 for as long as you want😃.</h2>
+<blockquote>
+  <p>Congratulations!! 👏👏 You have created your own Face Recognition system.</p>
+</blockquote>
 
-<h2 id="if-you-find-anything-wrong-please-mention-it-in-the-comments-i-would-️-to-improve">
-<a class="anchor" href="#if-you-find-anything-wrong-please-mention-it-in-the-comments-i-would-%EF%B8%8F-to-improve" aria-hidden="true"><span class="octicon octicon-link"></span></a>If you find anything wrong, please mention it in the comments. I would ❤️ to improve.</h2>
+<p>You can provide your feedback in comment section below.</p>
 
-<p><strong>You can contact me at <a href="http://twitter.com/iamaniketmaurya">twitter.com/aniketmaurya</a> or drop your 📧 at <a href="http://aniketmaurya@outlook.com">aniketmaurya@outlook.com</a></strong></p>
+<p><strong>Follow me on <a href="Twitter">twitter.com/aniketmaurya</a></strong></p>
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
