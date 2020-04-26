@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://aniketmaurya.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://aniketmaurya.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-04-26T06:48:31-05:00</updated><id>https://aniketmaurya.github.io/blog/feed.xml</id><title type="html">Overfitted</title><subtitle>Blogs on AI and Programming.</subtitle><entry><title type="html">tf.data: Creating data input pipelines</title><link href="https://aniketmaurya.github.io/blog/tensorflow/2020/04/08/tf.data-Creating-Data-Input-Pipelines.html" rel="alternate" type="text/html" title="tf.data: Creating data input pipelines" /><published>2020-04-08T00:00:00-05:00</published><updated>2020-04-08T00:00:00-05:00</updated><id>https://aniketmaurya.github.io/blog/tensorflow/2020/04/08/tf.data-Creating-Data-Input-Pipelines</id><content type="html" xml:base="https://aniketmaurya.github.io/blog/tensorflow/2020/04/08/tf.data-Creating-Data-Input-Pipelines.html">&lt;p&gt;Are you not able to load your NumPy data into memory?
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://aniketmaurya.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://aniketmaurya.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-04-26T06:58:05-05:00</updated><id>https://aniketmaurya.github.io/blog/feed.xml</id><title type="html">Overfitted</title><subtitle>Blogs on AI and Programming.</subtitle><entry><title type="html">Normalization in Deep Learning</title><link href="https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2020/04/26/Normalization.html" rel="alternate" type="text/html" title="Normalization in Deep Learning" /><published>2020-04-26T00:00:00-05:00</published><updated>2020-04-26T00:00:00-05:00</updated><id>https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2020/04/26/Normalization</id><content type="html" xml:base="https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2020/04/26/Normalization.html">&lt;h1 id=&quot;normalization-in-deep-learning&quot;&gt;Normalization in Deep Learning&lt;/h1&gt;
+
+&lt;p&gt;Normalization is an important technique widely used in Deep Learning to achieve better results in less time.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-do-we-need-to-normalize-in-the-first-place&quot;&gt;Why do we need to Normalize in the first place?&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Covariate Shift:&lt;/strong&gt; Most of the time the training dataset is very different from the real dataset. Suppose, a CNN model is trained to classify cats. But the training dataset only had images of black cats. So, if the model is fed with an image of a white cat it may not predict correctly.
+This phenomenon is called &lt;strong&gt;Covariate-Shift&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;In the graph below, the training data mostly falls on a linear function. But after including test data it looks more like a quadratic distribution.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/0*y6ooHSrMwL6krpWY.png&quot; alt=&quot;[Source](http://iwann.ugr.es/2011/pdf/InvitedTalk-FHerrera-IWANN11.pdf): [http://iwann.ugr.es/2011/pdf/InvitedTalk-FHerrera-IWANN11.pdf](http://iwann.ugr.es/2011/pdf/InvitedTalk-FHerrera-IWANN11.pdf)&quot; /&gt;&lt;em&gt;&lt;a href=&quot;http://iwann.ugr.es/2011/pdf/InvitedTalk-FHerrera-IWANN11.pdf&quot;&gt;Source&lt;/a&gt;: &lt;a href=&quot;http://iwann.ugr.es/2011/pdf/InvitedTalk-FHerrera-IWANN11.pdf&quot;&gt;http://iwann.ugr.es/2011/pdf/InvitedTalk-FHerrera-IWANN11.pdf&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Generally in image datasets, the distribution can change because of change in camera resolutions or any other environmental change.&lt;/p&gt;</content><author><name></name></author><summary type="html">Normalization in Deep Learning</summary></entry><entry><title type="html">tf.data: Creating data input pipelines</title><link href="https://aniketmaurya.github.io/blog/tensorflow/2020/04/08/tf.data-Creating-Data-Input-Pipelines.html" rel="alternate" type="text/html" title="tf.data: Creating data input pipelines" /><published>2020-04-08T00:00:00-05:00</published><updated>2020-04-08T00:00:00-05:00</updated><id>https://aniketmaurya.github.io/blog/tensorflow/2020/04/08/tf.data-Creating-Data-Input-Pipelines</id><content type="html" xml:base="https://aniketmaurya.github.io/blog/tensorflow/2020/04/08/tf.data-Creating-Data-Input-Pipelines.html">&lt;p&gt;Are you not able to load your NumPy data into memory?
 Does your model have to wait for data to be loaded after each epoch?
 Is your Keras DataGenerator slow?&lt;/p&gt;
 
@@ -1251,4 +1264,96 @@ The fused features are fed to a class and bounding box network for predicting ob
 &lt;/ol&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;
-You can contact me at &lt;a href=&quot;http://twitter.com/iamaniketmaurya&quot;&gt;twitter.com/aniketmaurya&lt;/a&gt; or drop an 📧 at &lt;a href=&quot;http://aniketmaurya@outlook.com&quot;&gt;aniketmaurya@outlook.com&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Image Classification with TF 2</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://4.bp.blogspot.com/-mya0XZqrtJs/XoN9SufkS2I/AAAAAAAAC5w/y5POjjt0Rs8B8uLLO1gegGb74MYTx7W7gCLcBGAsYHQ/s1600/TF_FullColor_Icon.jpg" /><media:content medium="image" url="https://4.bp.blogspot.com/-mya0XZqrtJs/XoN9SufkS2I/AAAAAAAAC5w/y5POjjt0Rs8B8uLLO1gegGb74MYTx7W7gCLcBGAsYHQ/s1600/TF_FullColor_Icon.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+You can contact me at &lt;a href=&quot;http://twitter.com/iamaniketmaurya&quot;&gt;twitter.com/aniketmaurya&lt;/a&gt; or drop an 📧 at &lt;a href=&quot;http://aniketmaurya@outlook.com&quot;&gt;aniketmaurya@outlook.com&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Image Classification with TF 2</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://4.bp.blogspot.com/-mya0XZqrtJs/XoN9SufkS2I/AAAAAAAAC5w/y5POjjt0Rs8B8uLLO1gegGb74MYTx7W7gCLcBGAsYHQ/s1600/TF_FullColor_Icon.jpg" /><media:content medium="image" url="https://4.bp.blogspot.com/-mya0XZqrtJs/XoN9SufkS2I/AAAAAAAAC5w/y5POjjt0Rs8B8uLLO1gegGb74MYTx7W7gCLcBGAsYHQ/s1600/TF_FullColor_Icon.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Face Recognition</title><link href="https://aniketmaurya.github.io/blog/tensorflow/face%20recognition/2019/01/07/face-recognition.html" rel="alternate" type="text/html" title="Face Recognition" /><published>2019-01-07T00:00:00-06:00</published><updated>2019-01-07T00:00:00-06:00</updated><id>https://aniketmaurya.github.io/blog/tensorflow/face%20recognition/2019/01/07/face-recognition</id><content type="html" xml:base="https://aniketmaurya.github.io/blog/tensorflow/face%20recognition/2019/01/07/face-recognition.html">&lt;p&gt;AI is revolutionizing the world. Face recognition is one such spectrum of it. Almost everyone uses face recognition systems — on our mobile, Facebook, Photo gallery apps or advanced security cameras. Learn how these systems are able to recognize our faces. This article is inspired by the deeplearning.ai course on FaceNet.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*t3DEmVOWOuWjIo_TjcpxNQ.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;face-verification-vs-face-recognition&quot;&gt;Face Verification vs. Face Recognition&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Face Verification&lt;/em&gt;** **checks “is this the claimed person?”. For example, in school, you go with your ID card and the invigilator verifies your face with the ID card. This is Face Verification. A mobile phone that unlocks using our face is also using face verification. It is 1:1 matching problem.&lt;/p&gt;
+
+&lt;p&gt;Now suppose the invigilator knows everyone by their name. So, you decide to go there without an ID card. The invigilator identifies your face and lets you in. This is Face Recognition. &lt;em&gt;Face Recognition&lt;/em&gt;** **deals with “who is this person?” problem. We can say that it is a 1:K problem.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-pixel-by-pixel-comparison-of-images-isabadidea&quot;&gt;Why pixel-by-pixel comparison of images is a bad idea?&lt;/h3&gt;
+
+&lt;p&gt;A simple way for face verification can be comparing two images pixel-by-pixel and if the threshold between images is less than a threshold then we can say that they’re the same person. But since the pixel values in an image change dramatically even with a slight change of light, position or orientation. So, this method doesn’t work well.&lt;/p&gt;
+
+&lt;h3 id=&quot;face-embedding-come-to-the-rescue&quot;&gt;Face Embedding come to the rescue&lt;/h3&gt;
+
+&lt;p&gt;The &lt;em&gt;embedding&lt;/em&gt; is represented by f (x), a d-dimensional vector. It encodes an image ‘x’ into a d-dimensional Euclidean space. The face embedding of two images of the same person are similar to each other and that of different persons are very different.&lt;/p&gt;
+
+&lt;p&gt;In ConvNet architectures, the initial layers learn to recognize basic patterns like straight lines, edges, circles, etc. and the deeper layers learn to recognize more complex patterns like numbers, faces, cars, etc.&lt;/p&gt;
+
+&lt;p&gt;To get our embedding we feed the image into a pre-trained model then run a forward propagation and extract the vector from some deeper Fully-Connected layer. You can learn the basics of CNN &lt;a href=&quot;https://medium.com/@aniketmaurya/not-just-introduction-to-convolutional-neural-networks-part-2-a7ac2723e30d&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-to-finetune-these-embeddings&quot;&gt;How to finetune these embeddings?&lt;/h3&gt;
+
+&lt;p&gt;[&lt;em&gt;The Triplet Loss](https://en.wikipedia.org/wiki/Triplet_loss)&lt;/em&gt; function takes the responsibility to &lt;em&gt;push&lt;/em&gt; the embeddings of two images of the same person (Anchor and Positive) closer together while &lt;em&gt;pulling&lt;/em&gt; the embeddings of two images of different persons (Anchor, Negative) further apart.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/3840/1*CKnxCH4SNOnTqctwX-ViKQ.png&quot; alt=&quot;Source: [Coursera](http://deeplearning.ai)&quot; /&gt;&lt;em&gt;Source: &lt;a href=&quot;http://deeplearning.ai&quot;&gt;Coursera&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;∥f(X1) — f(X2)∥² **is the degree of similarity between image X1 and X2. If it’s smaller than a chosen threshold then both are the same person. If you’re wondering “what this **∥&lt;/strong&gt;A&lt;em&gt;*∥ **weird symbol is?”, it’s called *Frobenius Norm&lt;/em&gt; and you don’t need to worry about it.&lt;/p&gt;
+
+&lt;p&gt;The distance between &lt;em&gt;Anchor&lt;/em&gt; and &lt;em&gt;Positive&lt;/em&gt; images should be less and the distance between &lt;em&gt;Anchor&lt;/em&gt; and &lt;em&gt;Negative&lt;/em&gt; images should be high.&lt;/p&gt;
+
+&lt;p&gt;i.e. &lt;strong&gt;∥f(Anchor) — f(Positive)∥² ≤ ∥f(Anchor) — f(Negative)∥²&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;by-now-you-know-the-underlying-concepts-of-face-recognition-i-will-tell-you-how-to-create-a-face-verification-and-recognition-system-its-super-easy&quot;&gt;&lt;strong&gt;By now you know the underlying concepts of Face Recognition, I will tell you how to create a Face Verification and Recognition system. It’s super easy.&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;Training a Face recognition model is computationally expensive so I’ll recommend downloading a &lt;a href=&quot;https://github.com/iwantooxxoox/Keras-OpenFace&quot;&gt;pre-trained model&lt;/a&gt;. Start with creating a database of persons containing an embedding vector for each.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;*#create a dictionary database
+*db = dict()
+*#encoding(image_path) converts image to embedding
+*db['person1'] = encoding('person1.jpg')
+db['person2'] = encoding('person2.jpg')
+db['person3'] = encoding('person3.jpg')
+db['person4'] = encoding('person4.jpg')
+db['person5'] = encoding('person5.jpg')
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now that we have created our database, we can define a function that accepts image embedding and name of the person as the argument and it will verify if they are the same person.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;**def** verify(embedding, person_name):
+     
+*    # numpy.linalg.norm calculates the Frobenius Norm
+*    dist = np.linalg.norm(embedding - db[person_name])
+    
+*    # Chosen threshold is 0.7  
+*    **if** dist &amp;lt; 0.7:
+        print(&quot;Verified! Welcome &quot; + person_name)
+    **else**:
+        print(&quot;Person name and face didn't match!&quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Hurray 😎! We created our Face Verification system. Now let’s create the Face Recognition System. If you remember, a person doesn’t need any ID in the face recognition system. He just needs to show his face to the camera.&lt;/p&gt;
+
+&lt;p&gt;In Face recognition, the distance will be calculated for all the images in the database against the input embedding and the smallest distance has to be searched.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;**def** recognize_me(input_embedding):
+
+*    # Set min_dist to infinity
+*    min_dist = np.inf
+    
+    *# Iterate over the database to calulate distance for each person*
+    **for** (name, emb) **in** db.items():
+        
+        *# Compute the distance*
+        curr_dist = np.linalg.norm(input_embedding - emb)
+
+*        # identity is set to the name of the person from the database whose distance is smallest against the input encoding
+*        **if** curr_dist &amp;lt; min_dist:
+            min_dist = curr_dist
+            identity = name
+    
+    **if** min_dist &amp;gt; 0.7:
+        print(&quot;Sorry! You’re not in the database.&quot;)
+    **else**:
+        print (&quot;Hi! Welcome &quot; + identity) &amp;gt; # Congratulations!! 👏👏 You have created your own Face Recognition system.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;if-you-have-learned-something-then-feel-free-to-press-for-as-long-as-you-want&quot;&gt;If you have learned something then feel free to press👏 for as long as you want😃.&lt;/h2&gt;
+
+&lt;h2 id=&quot;if-you-find-anything-wrong-please-mention-it-in-the-comments-i-would-️-to-improve&quot;&gt;If you find anything wrong, please mention it in the comments. I would ❤️ to improve.&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;You can contact me at &lt;a href=&quot;http://twitter.com/iamaniketmaurya&quot;&gt;twitter.com/aniketmaurya&lt;/a&gt; or drop your 📧 at &lt;a href=&quot;http://aniketmaurya@outlook.com&quot;&gt;aniketmaurya@outlook.com&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">AI is revolutionizing the world. Face recognition is one such spectrum of it. Almost everyone uses face recognition systems — on our mobile, Facebook, Photo gallery apps or advanced security cameras. Learn how these systems are able to recognize our faces. This article is inspired by the deeplearning.ai course on FaceNet.</summary></entry></feed>
