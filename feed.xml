@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://aniketmaurya.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://aniketmaurya.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-04-26T04:14:53-05:00</updated><id>https://aniketmaurya.github.io/blog/feed.xml</id><title type="html">Overfitted</title><subtitle>Blogs on AI and Programming.</subtitle><entry><title type="html">tf.data: Creating data input pipelines</title><link href="https://aniketmaurya.github.io/blog/tensorflow/2020/04/08/tf.data-Creating-Data-Input-Pipelines.html" rel="alternate" type="text/html" title="tf.data: Creating data input pipelines" /><published>2020-04-08T00:00:00-05:00</published><updated>2020-04-08T00:00:00-05:00</updated><id>https://aniketmaurya.github.io/blog/tensorflow/2020/04/08/tf.data-Creating-Data-Input-Pipelines</id><content type="html" xml:base="https://aniketmaurya.github.io/blog/tensorflow/2020/04/08/tf.data-Creating-Data-Input-Pipelines.html">&lt;p&gt;Are you not able to load your NumPy data into memory?
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://aniketmaurya.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://aniketmaurya.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-04-26T06:11:52-05:00</updated><id>https://aniketmaurya.github.io/blog/feed.xml</id><title type="html">Overfitted</title><subtitle>Blogs on AI and Programming.</subtitle><entry><title type="html">tf.data: Creating data input pipelines</title><link href="https://aniketmaurya.github.io/blog/tensorflow/2020/04/08/tf.data-Creating-Data-Input-Pipelines.html" rel="alternate" type="text/html" title="tf.data: Creating data input pipelines" /><published>2020-04-08T00:00:00-05:00</published><updated>2020-04-08T00:00:00-05:00</updated><id>https://aniketmaurya.github.io/blog/tensorflow/2020/04/08/tf.data-Creating-Data-Input-Pipelines</id><content type="html" xml:base="https://aniketmaurya.github.io/blog/tensorflow/2020/04/08/tf.data-Creating-Data-Input-Pipelines.html">&lt;p&gt;Are you not able to load your NumPy data into memory?
 Does your model have to wait for data to be loaded after each epoch?
 Is your Keras DataGenerator slow?&lt;/p&gt;
 
@@ -1103,7 +1103,101 @@ And another {% fn 2 %}
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</content><author><name></name></author><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://aniketmaurya.github.io/blog/images/chart-preview.png" /><media:content medium="image" url="https://aniketmaurya.github.io/blog/images/chart-preview.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Image Classification with Tensorflow 2.x</title><link href="https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html" rel="alternate" type="text/html" title="Image Classification with Tensorflow 2.x" /><published>2019-05-12T00:00:00-05:00</published><updated>2019-05-12T00:00:00-05:00</updated><id>https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2</id><content type="html" xml:base="https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html">&lt;h1 id=&quot;image-classification-with-tf-2&quot;&gt;Image Classification with TF 2&lt;/h1&gt;
+&lt;/div&gt;</content><author><name></name></author><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://aniketmaurya.github.io/blog/images/chart-preview.png" /><media:content medium="image" url="https://aniketmaurya.github.io/blog/images/chart-preview.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">EfficientDet: When Object Detection Meets Scalability and Efficiency</title><link href="https://aniketmaurya.github.io/blog/object%20detection/2020/01/13/EfficientDet.html" rel="alternate" type="text/html" title="EfficientDet: When Object Detection Meets Scalability and Efficiency" /><published>2020-01-13T00:00:00-06:00</published><updated>2020-01-13T00:00:00-06:00</updated><id>https://aniketmaurya.github.io/blog/object%20detection/2020/01/13/EfficientDet</id><content type="html" xml:base="https://aniketmaurya.github.io/blog/object%20detection/2020/01/13/EfficientDet.html">&lt;p&gt;EfficientDet, a highly efficient and scalable state of the art object detection model developed by Google Research, Brain Team. It is not just a single model. It has a family of detectors which achieve better accuracy with an order-of-magnitude fewer parameters and FLOPS than previous object detectors.&lt;/p&gt;
+
+&lt;p&gt;EfficientDet paper has mentioned its 7 family members.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h3 id=&quot;comparison-of-efficientdet-detectors06-with-other-sota-object-detection-models&quot;&gt;Comparison of EfficientDet detectors[0–6] with other SOTA object detection models.&lt;/h3&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/3360/1*wVXzRV58CNjHMV24FMFz7g.png&quot; alt=&quot;Source: [arXiv:1911.09070v1](https://arxiv.org/abs/1911.09070)&quot; /&gt;&lt;em&gt;Source: &lt;a href=&quot;https://arxiv.org/abs/1911.09070&quot;&gt;arXiv:1911.09070v1&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;quick-overview-of-the-paper&quot;&gt;Quick Overview of the Paper&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://arxiv.org/abs/1905.11946&quot;&gt;EfficientNet&lt;/a&gt;&lt;/strong&gt; is the backbone architecture used in the model. EfficientNet is also written by the same authors at Google. Conventional CNN models arbitrarily scaled network dimensions- &lt;em&gt;width, depth and resolution&lt;/em&gt;. EfficientNet uniformly scales each dimension with a fixed set of scaling coefficients. It surpassed SOTA accuracy with 10x efficiency.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;BiFPN&lt;/strong&gt;: While &lt;em&gt;fusing&lt;/em&gt; (applying &lt;a href=&quot;https://arxiv.org/abs/1512.03385&quot;&gt;residual or skip connections&lt;/a&gt;) different input features, most of the works simply summed them up without any distinction. Since both input features are at the different resolutions they don’t equally contribute to the fused output layer. The paper proposes a weighted bi-directional feature pyramid network (BiFPN), which introduces learnable weights to learn the importance of different input features.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Compound Scaling&lt;/strong&gt;: For higher accuracy previous object detection models relied on — bigger backbone or larger input image sizes. Compound Scaling is a method that uses a simple compound coefficient &lt;strong&gt;φ&lt;/strong&gt; to jointly scale-up all dimensions of the backbone network, BiFPN network, class/box network, and resolution.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Combining EfficientNet backbones with our propose BiFPN and compound scaling, we have developed a new family of object detectors, named EfficientDet, which consistently achieve better accuracy with an order-of-magnitude fewer parameters and FLOPS than previous object detectors.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;bifpn&quot;&gt;BiFPN&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*ZqkRP7n8Xh-PILCuX1510A.png&quot; alt=&quot;Source: [arXiv:1911.09070v1](https://arxiv.org/abs/1911.09070) — figure 2&quot; /&gt;&lt;em&gt;Source: &lt;a href=&quot;https://arxiv.org/abs/1911.09070&quot;&gt;arXiv:1911.09070v1&lt;/a&gt; — figure 2&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Conventional FPN (Feature Pyramid Network) is limited by the one-way information flow. &lt;a href=&quot;https://arxiv.org/pdf/1803.01534.pdf&quot;&gt;PANet&lt;/a&gt; added an extra bottom-up path for information flow. PANet achieved better accuracy but with the cost and more parameters and computations. The paper proposed several optimizations for cross-scale connections:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Remove Nodes that only have one input edge. 
+&lt;em&gt;If a node has only one input edge with no feature fusion, then it will have less contribution to the feature network that aims at fusing different features.&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add an extra edge from the original input to output node if they are at the same level, in order to fuse more features without adding much cost.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Treat each bidirectional (top-down &amp;amp; bottom-up) path as one feature network layer, and repeat the same layer multiple times to enable more high-level feature fusion.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;weighted-feature-fusion&quot;&gt;Weighted Feature Fusion&lt;/h2&gt;
+
+&lt;p&gt;While multi-scale fusion, input features are not simply summed up. The authors proposed to add additional weight for each input during feature fusion and let the network to learn the importance of each input feature. Out of three weighted fusion approaches — 
+&lt;strong&gt;Unbounded fusion:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*rv-MpuUiv-uVs5Trx4XI1Q.png&quot; alt=&quot;Source: [https://arxiv.org/abs/1911.09070](https://arxiv.org/abs/1911.09070)&quot; /&gt;&lt;em&gt;Source: &lt;a href=&quot;https://arxiv.org/abs/1911.09070&quot;&gt;https://arxiv.org/abs/1911.09070&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Where &lt;em&gt;W&lt;/em&gt; is a learnable weight that can be a scalar (per-feature), a vector (per-channel), or a multi-dimensional tensor (per-pixel). Since the scalar weight is unbounded, it could potentially cause training instability. So, Softmax-based fusion was tried for normalized weights.
+&lt;strong&gt;Softmax-based fusion:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*AhA54rA3NcNFEuosOac_YA.png&quot; alt=&quot;Source: [https://arxiv.org/abs/1911.09070](https://arxiv.org/abs/1911.09070)&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As softmax normalizes the weights to be the probability of range 0 to 1 which can denote the importance of each input. The softmax leads to a slowdown on GPU.
+&lt;strong&gt;Fast normalized fusion:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*AO0A5dDSJl0GKeUvYYc4cQ.png&quot; alt=&quot;Source: [https://arxiv.org/abs/1911.09070](https://arxiv.org/abs/1911.09070)&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Є is added for numeric stability. It is 30% faster on GPU and gave almost as accurate results as softmax.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Final BiFPN integrates both the bidirectional cross-scale connections and the fast normalized fusion.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;efficientdet-architecture&quot;&gt;EfficientDet Architecture&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/4062/1*nP0LlBoz0Uqhd17T4bINzg.png&quot; alt=&quot;Source: [arXiv:1911.09070v1](https://arxiv.org/abs/1911.09070) — figure 3&quot; /&gt;&lt;em&gt;Source: &lt;a href=&quot;https://arxiv.org/abs/1911.09070&quot;&gt;arXiv:1911.09070v1&lt;/a&gt; — figure 3&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;EfficientDet follows one-stage-detection paradigm. A pre-trained EfficientNet backbone is used with BiFPN as the feature extractor. BiFPNN takes {P3, P4, P5, P6, P7} features from the EfficientNet backbone network and repeatedly applies bidirectional feature fusion.
+The fused features are fed to a class and bounding box network for predicting object class and bounding box.&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1911.09070&quot;&gt;EfficientDet: Scalable and Efficient Object Detection&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1905.11946&quot;&gt;EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1803.01534&quot;&gt;Path Aggregation Network for Instance Segmentation&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1512.03385&quot;&gt;Deep Residual Learning for Image Recognition&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Hope you liked the article.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;👉 &lt;a href=&quot;https://twitter.com/aniketmaurya&quot;&gt;Twitter&lt;/a&gt;: &lt;a href=&quot;https://twitter.com/aniketmaurya&quot;&gt;https://twitter.com/aniketmaurya&lt;/a&gt;
+👉 Mail: aniketmaurya@outlook.com&lt;/p&gt;</content><author><name></name></author><summary type="html">EfficientDet, a highly efficient and scalable state of the art object detection model developed by Google Research, Brain Team. It is not just a single model. It has a family of detectors which achieve better accuracy with an order-of-magnitude fewer parameters and FLOPS than previous object detectors.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://raw.githubusercontent.com/aniketmaurya/machine_learning/master/blog_files/2020-01-13-EfficientDet/network.png" /><media:content medium="image" url="https://raw.githubusercontent.com/aniketmaurya/machine_learning/master/blog_files/2020-01-13-EfficientDet/network.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Image Classification with Tensorflow 2.x</title><link href="https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html" rel="alternate" type="text/html" title="Image Classification with Tensorflow 2.x" /><published>2019-05-12T00:00:00-05:00</published><updated>2019-05-12T00:00:00-05:00</updated><id>https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2</id><content type="html" xml:base="https://aniketmaurya.github.io/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html">&lt;h1 id=&quot;image-classification-with-tf-2&quot;&gt;Image Classification with TF 2&lt;/h1&gt;
 
 &lt;p&gt;Unlike previous versions, TensorFlow 2.0 is coming out with some major changes. It is going to be more pythonic and no need to turn on eager execution explicitly. With tight integration of Keras now it will focus on simplicity and ease of use.&lt;/p&gt;
 
