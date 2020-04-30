@@ -144,7 +144,11 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#article-is-in-progress-2020-04-30">Article is in progress 2020-04-30</a></li>
 <li class="toc-entry toc-h1"><a href="#probability">Probability</a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#joint-probability">Joint Probability</a></li>
+<li class="toc-entry toc-h2"><a href="#joint-probability">Joint Probability</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#joint-probability-is-symmetric">Joint probability is symmetric</a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h2"><a href="#conditional-probability">Conditional Probability</a></li>
 <li class="toc-entry toc-h2"><a href="#maximum-likelihood">Maximum Likelihood</a></li>
 </ul>
@@ -172,7 +176,7 @@ $P(dice_1=6\cap dice_2=6) = P(dice_1=6) \times P(dice_2=6)=\frac{1}{6} \times \f
 
 <p><strong>What if one of the dice is biased towards 6, i.e.</strong> <bold> $P(dice_1=6) = 1/4\ and\ P(dice_2=6)=1/6$</bold></p>
 
-<p>Our probability will become <small>$P(dice_1=6\cap dice_2=6) = 1/6 \times 1/4$</small></p>
+<p>The probability will become <bold>$P(dice_1=6\cap dice_2=6) = 1/6 \times 1/4$</bold></p>
 
 <h2 id="joint-probability">
 <a class="anchor" href="#joint-probability" aria-hidden="true"><span class="octicon octicon-link"></span></a>Joint Probability</h2>
@@ -181,21 +185,33 @@ Rolling two dice together is an example of Joint Probability.</p>
 
 <p>If the two events E1 and E2 are independent of each other then the joint probability is multiplication of P(E1) and P(E2).</p>
 
-<blockquote>
-  <p>$P(A\ given\ B)$ is denoted as $P(A|B)$</p>
-</blockquote>
+<p><small>$P(E_1\ and\ E_2) = P(E_1) \times P(E_2)$</small></p>
 
-<p><small>$P(E_1\ and\ E_2) = P(E_1) \times P(E_2) = P(E_1|E_2)P(E_2) = P(E_2|E_1)P(E_1)$</small></p>
+<p><code class="highlighter-rouge">P(A given B) is denoted as P(A|B)</code></p>
 
 <p>If the two events E1 and E2 are not independent then the joint probability is:</p>
 
-<p><small>$P(E_1\ and\ E_2) = P(E_1|E_2)P(E_2) = P(E_2|E_1)P(E_1)$</small></p>
+<bold>$P(E_1\ and\ E_2) = P(E_1|E_2)P(E_2) = P(E_2|E_1)P(E_1)$</bold>
+
+<h3 id="joint-probability-is-symmetric">
+<a class="anchor" href="#joint-probability-is-symmetric" aria-hidden="true"><span class="octicon octicon-link"></span></a>Joint probability is symmetric</h3>
+<pre><code class="language-math">P(A,B) = P(B, A)
+
+P(A,B) = P(B|A)P(A)
+
+P(B,A) = P(A|B)P(B)
+
+P(A|B)P(B) = P(B|A)P(A)
+</code></pre>
+<p>$P(A|B) = \frac{P(B|A)P(A)}{P(B)}$</p>
 
 <h2 id="conditional-probability">
 <a class="anchor" href="#conditional-probability" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conditional Probability</h2>
-<p>It is the probability of one event when the other is given.</p>
+<p>It is the probability of one event when occurence of the other is given.</p>
 
-<p>Probability of getting a 6 given that the die is biased one, that is P(6) = 1/4</p>
+<p>Consider two events A and B, given that B has occurred. Then the probability of A given B is:</p>
+
+<p>$P(A|B) =  \frac{P(B|A)P(B)}{P(A)} = \frac{P(A, B)}{P(A)}$</p>
 
 <h2 id="maximum-likelihood">
 <a class="anchor" href="#maximum-likelihood" aria-hidden="true"><span class="octicon octicon-link"></span></a>Maximum Likelihood</h2>
