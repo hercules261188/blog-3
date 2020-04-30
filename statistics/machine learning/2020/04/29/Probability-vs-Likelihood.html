@@ -3,9 +3,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Probability vs Likelyhood vs Maximum Likelyhood | Overfitted</title>
+<title>Probability vs Likelihood vs Maximum Likelihood | Overfitted</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Probability vs Likelyhood vs Maximum Likelyhood" />
+<meta property="og:title" content="Probability vs Likelihood vs Maximum Likelihood" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Theory and examples of Probability vs Likelihood vs Maximum Likelihood" />
 <meta property="og:description" content="Theory and examples of Probability vs Likelihood vs Maximum Likelihood" />
@@ -16,7 +16,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-04-29T00:00:00-05:00" />
 <script type="application/ld+json">
-{"headline":"Probability vs Likelyhood vs Maximum Likelyhood","description":"Theory and examples of Probability vs Likelihood vs Maximum Likelihood","datePublished":"2020-04-29T00:00:00-05:00","dateModified":"2020-04-29T00:00:00-05:00","image":"https://raw.githubusercontent.com/aniketmaurya/machine_learning/master/blog_files/2020-04-29-Probability-vs-Likelyhood/dice-min.jpg","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html"},"url":"https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html","@context":"https://schema.org"}</script>
+{"headline":"Probability vs Likelihood vs Maximum Likelihood","description":"Theory and examples of Probability vs Likelihood vs Maximum Likelihood","datePublished":"2020-04-29T00:00:00-05:00","dateModified":"2020-04-29T00:00:00-05:00","image":"https://raw.githubusercontent.com/aniketmaurya/machine_learning/master/blog_files/2020-04-29-Probability-vs-Likelyhood/dice-min.jpg","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html"},"url":"https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://aniketmaurya.github.io/blog/feed.xml" title="Overfitted" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -25,9 +25,9 @@
 <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-156199072-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
 
 <link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Probability vs Likelyhood vs Maximum Likelyhood | Overfitted</title>
+<title>Probability vs Likelihood vs Maximum Likelihood | Overfitted</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Probability vs Likelyhood vs Maximum Likelyhood" />
+<meta property="og:title" content="Probability vs Likelihood vs Maximum Likelihood" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Theory and examples of Probability vs Likelihood vs Maximum Likelihood" />
 <meta property="og:description" content="Theory and examples of Probability vs Likelihood vs Maximum Likelihood" />
@@ -38,7 +38,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-04-29T00:00:00-05:00" />
 <script type="application/ld+json">
-{"headline":"Probability vs Likelyhood vs Maximum Likelyhood","description":"Theory and examples of Probability vs Likelihood vs Maximum Likelihood","datePublished":"2020-04-29T00:00:00-05:00","dateModified":"2020-04-29T00:00:00-05:00","image":"https://raw.githubusercontent.com/aniketmaurya/machine_learning/master/blog_files/2020-04-29-Probability-vs-Likelyhood/dice-min.jpg","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html"},"url":"https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html","@context":"https://schema.org"}</script>
+{"headline":"Probability vs Likelihood vs Maximum Likelihood","description":"Theory and examples of Probability vs Likelihood vs Maximum Likelihood","datePublished":"2020-04-29T00:00:00-05:00","dateModified":"2020-04-29T00:00:00-05:00","image":"https://raw.githubusercontent.com/aniketmaurya/machine_learning/master/blog_files/2020-04-29-Probability-vs-Likelyhood/dice-min.jpg","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html"},"url":"https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -115,7 +115,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Probability vs Likelyhood vs Maximum Likelyhood</h1><p class="page-description">Theory and examples of Probability vs Likelihood vs Maximum Likelihood</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-04-29T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Probability vs Likelihood vs Maximum Likelihood</h1><p class="page-description">Theory and examples of Probability vs Likelihood vs Maximum Likelihood</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-04-29T00:00:00-05:00" itemprop="datePublished">
         Apr 29, 2020
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -140,19 +140,29 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img src="https://raw.githubusercontent.com/aniketmaurya/machine_learning/master/blog_files/2020-04-29-Probability-vs-Likelyhood/dice-min.jpg" alt="" title="Photo by Riho Kroll on Unsplash" /></p>
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#article-is-in-progress-2020-04-30">Article is in progress 2020-04-30</a></li>
+<li class="toc-entry toc-h1"><a href="#probability">Probability</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#joint-probability">Joint Probability</a></li>
+<li class="toc-entry toc-h2"><a href="#conditional-probability">Conditional Probability</a></li>
+<li class="toc-entry toc-h2"><a href="#maximum-likelihood">Maximum Likelihood</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#references">References</a></li>
+</ul><p><img src="https://raw.githubusercontent.com/aniketmaurya/machine_learning/master/blog_files/2020-04-29-Probability-vs-Likelyhood/dice-min.jpg" alt="" title="Photo by Riho Kroll on Unsplash"></p>
 
-<h1 id="article-is-in-progress-2020-04-30">Article is in progress 2020-04-30</h1>
-<h1 id="probability">Probability</h1>
-<p>Probability is the quantative measure of certainity of an event.
+<h1 id="article-is-in-progress-2020-04-30">
+<a class="anchor" href="#article-is-in-progress-2020-04-30" aria-hidden="true"><span class="octicon octicon-link"></span></a>Article is in progress 2020-04-30</h1>
+<h1 id="probability">
+<a class="anchor" href="#probability" aria-hidden="true"><span class="octicon octicon-link"></span></a>Probability</h1>
+<p>Probability is the quantitative measure of certainty of an event.
 Mathematically, probability $P$ for an event $E$ is defined as:</p>
 
-<p>$P(E) = \frac{number\,of\,times\,event\,E\,occurred}{Total\,number\,of\,events}$</p>
+<p>$P(E) = \frac{number\ of\ times\ event\ E\ occurred}{Total\ number\ of\ events}$</p>
 
-<p>Consider a fair die, possible outcomes of rolling the die can be 1 to 6. Where probability of each outcome is 1/6.
-<small>
-$P(1) = P(2) = P(3) = P(4) = P(5) = P(6) = 1/6$
-</small></p>
+<p>Consider a fair die, possible outcomes of rolling the die can be 1 to 6. Where probability of each outcome is 1/6.</p>
+<bold>$P(1) = P(2) = P(3) = P(4) = P(5) = P(6) = 1/6$</bold>
 
 <p><strong>What if we roll two dice together? What will be the probability that both dice will get the same digits, say 6?</strong></p>
 
@@ -160,29 +170,48 @@ $P(1) = P(2) = P(3) = P(4) = P(5) = P(6) = 1/6$
 $P(dice_1=6\cap dice_2=6) = P(dice_1=6) \times P(dice_2=6)=\frac{1}{6} \times \frac{1}{6}$
 </small></p>
 
-<p><strong>What if one of the dice is biased towards 6, i.e. <small>$P(dice_1=6) = 1/4\, and\, P(dice_2=6)=1/6$</small></strong></p>
+<p><strong>What if one of the dice is biased towards 6, i.e.</strong> <bold> $P(dice_1=6) = 1/4\ and\ P(dice_2=6)=1/6$</bold></p>
 
 <p>Our probability will become <small>$P(dice_1=6\cap dice_2=6) = 1/6 \times 1/4$</small></p>
 
-<h2 id="joint-probability">Joint Probability</h2>
+<h2 id="joint-probability">
+<a class="anchor" href="#joint-probability" aria-hidden="true"><span class="octicon octicon-link"></span></a>Joint Probability</h2>
+<p>Joint probability is the probability of two events occurring simultaneously.
+Rolling two dice together is an example of Joint Probability.</p>
+
+<p>If the two events E1 and E2 are independent of each other then the joint probability is multiplication of P(E1) and P(E2).</p>
+
 <blockquote>
-  <p>Joint probability is the probability of two events occurring simultaneously.</p>
+  <p>$P(A\ given\ B)$ is denoted as $P(A|B)$</p>
 </blockquote>
 
-<p>If the two events E1 and E2 are independent of each other then the joint probability is multiplication of P(E1) and P(E2). Rolling two dice together is an example of Joint Probability.</p>
+<p><small>$P(E_1\ and\ E_2) = P(E_1) \times P(E_2) = P(E_1|E_2)P(E_2) = P(E_2|E_1)P(E_1)$</small></p>
 
-<p><small>$P(E_1\,and\,E_2) = P(E_1,E_2) = P(E_1\,given\, E_2, E_2) = P(E_2\,given\,E_1, E_1)$</small></p>
+<p>If the two events E1 and E2 are not independent then the joint probability is:</p>
 
-<p><small>$P(A \,give\, B)$ is denoted as $P(A|B)$</small></p>
+<p><small>$P(E_1\ and\ E_2) = P(E_1|E_2)P(E_2) = P(E_2|E_1)P(E_1)$</small></p>
 
-<h2 id="maximum-likelihood">Maximum Likelihood</h2>
+<h2 id="conditional-probability">
+<a class="anchor" href="#conditional-probability" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conditional Probability</h2>
+<p>It is the probability of one event when the other is given.</p>
+
+<p>Probability of getting a 6 given that the die is biased one, that is P(6) = 1/4</p>
+
+<h2 id="maximum-likelihood">
+<a class="anchor" href="#maximum-likelihood" aria-hidden="true"><span class="octicon octicon-link"></span></a>Maximum Likelihood</h2>
 <blockquote>
   <p>Maximum Likelihood is used to find the normal distribution of the given data. We estimate $\mu$ and $\sigma$ for the distribution.</p>
 </blockquote>
 
-<h2 id="references">References</h2>
+<h1 id="references">
+<a class="anchor" href="#references" aria-hidden="true"><span class="octicon octicon-link"></span></a>References</h1>
 <ul>
-  <li>https://towardsdatascience.com/probability-concepts-explained-maximum-likelihood-estimation-c7b4342fdbb1</li>
+  <li>
+    <p>https://machinelearningmastery.com/joint-marginal-and-conditional-probability-for-machine-learning/</p>
+  </li>
+  <li>
+    <p>https://towardsdatascience.com/probability-concepts-explained-maximum-likelihood-estimation-c7b4342fdbb1</p>
+  </li>
 </ul>
 
   </div><a class="u-url" href="/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html" hidden></a>

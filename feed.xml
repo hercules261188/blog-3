@@ -1,16 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://aniketmaurya.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://aniketmaurya.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-04-30T10:34:21-05:00</updated><id>https://aniketmaurya.github.io/blog/feed.xml</id><title type="html">Overfitted</title><subtitle>Blogs on AI and Programming.</subtitle><entry><title type="html">Probability vs Likelyhood vs Maximum Likelyhood</title><link href="https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html" rel="alternate" type="text/html" title="Probability vs Likelyhood vs Maximum Likelyhood" /><published>2020-04-29T00:00:00-05:00</published><updated>2020-04-29T00:00:00-05:00</updated><id>https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood</id><content type="html" xml:base="https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/aniketmaurya/machine_learning/master/blog_files/2020-04-29-Probability-vs-Likelyhood/dice-min.jpg&quot; alt=&quot;&quot; title=&quot;Photo by Riho Kroll on Unsplash&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://aniketmaurya.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://aniketmaurya.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-04-30T11:42:29-05:00</updated><id>https://aniketmaurya.github.io/blog/feed.xml</id><title type="html">Overfitted</title><subtitle>Blogs on AI and Programming.</subtitle><entry><title type="html">Probability vs Likelihood vs Maximum Likelihood</title><link href="https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html" rel="alternate" type="text/html" title="Probability vs Likelihood vs Maximum Likelihood" /><published>2020-04-29T00:00:00-05:00</published><updated>2020-04-29T00:00:00-05:00</updated><id>https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood</id><content type="html" xml:base="https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/aniketmaurya/machine_learning/master/blog_files/2020-04-29-Probability-vs-Likelyhood/dice-min.jpg&quot; alt=&quot;&quot; title=&quot;Photo by Riho Kroll on Unsplash&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;article-is-in-progress-2020-04-30&quot;&gt;Article is in progress 2020-04-30&lt;/h1&gt;
 &lt;h1 id=&quot;probability&quot;&gt;Probability&lt;/h1&gt;
-&lt;p&gt;Probability is the quantative measure of certainity of an event.
+&lt;p&gt;Probability is the quantitative measure of certainty of an event.
 Mathematically, probability $P$ for an event $E$ is defined as:&lt;/p&gt;
 
-&lt;p&gt;$P(E) = \frac{number\,of\,times\,event\,E\,occurred}{Total\,number\,of\,events}$&lt;/p&gt;
+&lt;p&gt;$P(E) = \frac{number\ of\ times\ event\ E\ occurred}{Total\ number\ of\ events}$&lt;/p&gt;
 
-&lt;p&gt;Consider a fair die, possible outcomes of rolling the die can be 1 to 6. Where probability of each outcome is 1/6.
-&lt;small&gt;
-$P(1) = P(2) = P(3) = P(4) = P(5) = P(6) = 1/6$
-&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;Consider a fair die, possible outcomes of rolling the die can be 1 to 6. Where probability of each outcome is 1/6.&lt;/p&gt;
+&lt;bold&gt;$P(1) = P(2) = P(3) = P(4) = P(5) = P(6) = 1/6$&lt;/bold&gt;
 
 &lt;p&gt;&lt;strong&gt;What if we roll two dice together? What will be the probability that both dice will get the same digits, say 6?&lt;/strong&gt;&lt;/p&gt;
 
@@ -18,29 +16,44 @@ $P(1) = P(2) = P(3) = P(4) = P(5) = P(6) = 1/6$
 $P(dice_1=6\cap dice_2=6) = P(dice_1=6) \times P(dice_2=6)=\frac{1}{6} \times \frac{1}{6}$
 &lt;/small&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;What if one of the dice is biased towards 6, i.e. &lt;small&gt;$P(dice_1=6) = 1/4\, and\, P(dice_2=6)=1/6$&lt;/small&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What if one of the dice is biased towards 6, i.e.&lt;/strong&gt; &lt;bold&gt; $P(dice_1=6) = 1/4\ and\ P(dice_2=6)=1/6$&lt;/bold&gt;&lt;/p&gt;
 
 &lt;p&gt;Our probability will become &lt;small&gt;$P(dice_1=6\cap dice_2=6) = 1/6 \times 1/4$&lt;/small&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;joint-probability&quot;&gt;Joint Probability&lt;/h2&gt;
+&lt;p&gt;Joint probability is the probability of two events occurring simultaneously.
+Rolling two dice together is an example of Joint Probability.&lt;/p&gt;
+
+&lt;p&gt;If the two events E1 and E2 are independent of each other then the joint probability is multiplication of P(E1) and P(E2).&lt;/p&gt;
+
 &lt;blockquote&gt;
-  &lt;p&gt;Joint probability is the probability of two events occurring simultaneously.&lt;/p&gt;
+  &lt;p&gt;$P(A\ given\ B)$ is denoted as $P(A|B)$&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;If the two events E1 and E2 are independent of each other then the joint probability is multiplication of P(E1) and P(E2). Rolling two dice together is an example of Joint Probability.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;$P(E_1\ and\ E_2) = P(E_1) \times P(E_2) = P(E_1|E_2)P(E_2) = P(E_2|E_1)P(E_1)$&lt;/small&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;small&gt;$P(E_1\,and\,E_2) = P(E_1,E_2) = P(E_1\,given\, E_2, E_2) = P(E_2\,given\,E_1, E_1)$&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;If the two events E1 and E2 are not independent then the joint probability is:&lt;/p&gt;
 
-&lt;p&gt;&lt;small&gt;$P(A \,give\, B)$ is denoted as $P(A|B)$&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;$P(E_1\ and\ E_2) = P(E_1|E_2)P(E_2) = P(E_2|E_1)P(E_1)$&lt;/small&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conditional-probability&quot;&gt;Conditional Probability&lt;/h2&gt;
+&lt;p&gt;It is the probability of one event when the other is given.&lt;/p&gt;
+
+&lt;p&gt;Probability of getting a 6 given that the die is biased one, that is P(6) = 1/4&lt;/p&gt;
 
 &lt;h2 id=&quot;maximum-likelihood&quot;&gt;Maximum Likelihood&lt;/h2&gt;
 &lt;blockquote&gt;
   &lt;p&gt;Maximum Likelihood is used to find the normal distribution of the given data. We estimate $\mu$ and $\sigma$ for the distribution.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
 &lt;ul&gt;
-  &lt;li&gt;https://towardsdatascience.com/probability-concepts-explained-maximum-likelihood-estimation-c7b4342fdbb1&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;https://machinelearningmastery.com/joint-marginal-and-conditional-probability-for-machine-learning/&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;https://towardsdatascience.com/probability-concepts-explained-maximum-likelihood-estimation-c7b4342fdbb1&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;</content><author><name></name></author><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://raw.githubusercontent.com/aniketmaurya/machine_learning/master/blog_files/2020-04-29-Probability-vs-Likelyhood/dice-min.jpg" /><media:content medium="image" url="https://raw.githubusercontent.com/aniketmaurya/machine_learning/master/blog_files/2020-04-29-Probability-vs-Likelyhood/dice-min.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Normalization</title><link href="https://aniketmaurya.github.io/blog/deep%20learning/machine%20learning/2020/04/26/Normalization.html" rel="alternate" type="text/html" title="Normalization" /><published>2020-04-26T00:00:00-05:00</published><updated>2020-04-26T00:00:00-05:00</updated><id>https://aniketmaurya.github.io/blog/deep%20learning/machine%20learning/2020/04/26/Normalization</id><content type="html" xml:base="https://aniketmaurya.github.io/blog/deep%20learning/machine%20learning/2020/04/26/Normalization.html">&lt;h1 id=&quot;normalization-in-deep-learning&quot;&gt;Normalization in Deep Learning&lt;/h1&gt;
 
 &lt;p&gt;Normalization is an important technique widely used in Deep Learning to achieve better results in less time.&lt;/p&gt;
