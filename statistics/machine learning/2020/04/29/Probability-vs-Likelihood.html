@@ -3,17 +3,20 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Tags | Overfitted</title>
+<title>Probability vs Likelyhood vs Maximum Likelyhood | Overfitted</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Tags" />
+<meta property="og:title" content="Probability vs Likelyhood vs Maximum Likelyhood" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Blogs on AI and Programming." />
-<meta property="og:description" content="Blogs on AI and Programming." />
-<link rel="canonical" href="https://aniketmaurya.github.io/blog/categories/" />
-<meta property="og:url" content="https://aniketmaurya.github.io/blog/categories/" />
+<meta name="description" content="Theory and examples of Probability vs Likelihood vs Maximum Likelihood" />
+<meta property="og:description" content="Theory and examples of Probability vs Likelihood vs Maximum Likelihood" />
+<link rel="canonical" href="https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html" />
+<meta property="og:url" content="https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html" />
 <meta property="og:site_name" content="Overfitted" />
+<meta property="og:image" content="https://raw.githubusercontent.com/aniketmaurya/machine_learning/master/blog_files/2020-04-29-Probability-vs-Likelyhood/dice-min.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-04-29T00:00:00-05:00" />
 <script type="application/ld+json">
-{"headline":"Tags","description":"Blogs on AI and Programming.","@type":"WebPage","url":"https://aniketmaurya.github.io/blog/categories/","@context":"https://schema.org"}</script>
+{"headline":"Probability vs Likelyhood vs Maximum Likelyhood","description":"Theory and examples of Probability vs Likelihood vs Maximum Likelihood","datePublished":"2020-04-29T00:00:00-05:00","dateModified":"2020-04-29T00:00:00-05:00","image":"https://raw.githubusercontent.com/aniketmaurya/machine_learning/master/blog_files/2020-04-29-Probability-vs-Likelyhood/dice-min.jpg","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html"},"url":"https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://aniketmaurya.github.io/blog/feed.xml" title="Overfitted" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -22,17 +25,20 @@
 <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-156199072-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
 
 <link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Tags | Overfitted</title>
+<title>Probability vs Likelyhood vs Maximum Likelyhood | Overfitted</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Tags" />
+<meta property="og:title" content="Probability vs Likelyhood vs Maximum Likelyhood" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Blogs on AI and Programming." />
-<meta property="og:description" content="Blogs on AI and Programming." />
-<link rel="canonical" href="https://aniketmaurya.github.io/blog/categories/" />
-<meta property="og:url" content="https://aniketmaurya.github.io/blog/categories/" />
+<meta name="description" content="Theory and examples of Probability vs Likelihood vs Maximum Likelihood" />
+<meta property="og:description" content="Theory and examples of Probability vs Likelihood vs Maximum Likelihood" />
+<link rel="canonical" href="https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html" />
+<meta property="og:url" content="https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html" />
 <meta property="og:site_name" content="Overfitted" />
+<meta property="og:image" content="https://raw.githubusercontent.com/aniketmaurya/machine_learning/master/blog_files/2020-04-29-Probability-vs-Likelyhood/dice-min.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-04-29T00:00:00-05:00" />
 <script type="application/ld+json">
-{"headline":"Tags","description":"Blogs on AI and Programming.","@type":"WebPage","url":"https://aniketmaurya.github.io/blog/categories/","@context":"https://schema.org"}</script>
+{"headline":"Probability vs Likelyhood vs Maximum Likelyhood","description":"Theory and examples of Probability vs Likelihood vs Maximum Likelihood","datePublished":"2020-04-29T00:00:00-05:00","dateModified":"2020-04-29T00:00:00-05:00","image":"https://raw.githubusercontent.com/aniketmaurya/machine_learning/master/blog_files/2020-04-29-Probability-vs-Likelyhood/dice-min.jpg","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html"},"url":"https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -106,103 +112,81 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Probability vs Likelyhood vs Maximum Likelyhood</h1><p class="page-description">Theory and examples of Probability vs Likelihood vs Maximum Likelihood</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-04-29T00:00:00-05:00" itemprop="datePublished">
+        Apr 29, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
 
-<h2>Contents</h2>
-
-  
-  
-  
-
-  <ul>
-  
-    <li><a href="#Deep Learning">Deep Learning</a></li>
-  
-    <li><a href="#Face Recognition">Face Recognition</a></li>
-  
-    <li><a href="#jupyter">jupyter</a></li>
-  
-    <li><a href="#Machine Learning">Machine Learning</a></li>
-  
-    <li><a href="#Object Detection">Object Detection</a></li>
-  
-    <li><a href="#Statistics">Statistics</a></li>
-  
-    <li><a href="#Tensorflow">Tensorflow</a></li>
-  
-  </ul>
-
-  
-      <h3 id ="Deep Learning"><i class="fas fa-tags category-tags-icon"></i></i> Deep Learning</h3>
-      <a name="Deep Learning"></a>
-      <article class="archive-item">
-        <p class="post-meta post-meta-title"><a class="page-meta" href="/blog/deep%20learning/machine%20learning/2020/04/26/Normalization.html">Normalization</a>  • Apr 26, 2020</p>
-      </article>
-      <article class="archive-item">
-        <p class="post-meta post-meta-title"><a class="page-meta" href="/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html">Image Classification with Tensorflow 2.x</a>  • May 12, 2019</p>
-      </article>
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
       
-  
-      <h3 id ="Face Recognition"><i class="fas fa-tags category-tags-icon"></i></i> Face Recognition</h3>
-      <a name="Face Recognition"></a>
-      <article class="archive-item">
-        <p class="post-meta post-meta-title"><a class="page-meta" href="/blog/tensorflow/face%20recognition/2019/01/07/face-recognition.html">Face Recognition</a>  • Jan 7, 2019</p>
-      </article>
+        <a class="category-tags-link" href="/blog/categories/#Statistics">Statistics</a>
+        &nbsp;
       
-  
-      <h3 id ="jupyter"><i class="fas fa-tags category-tags-icon"></i></i> jupyter</h3>
-      <a name="jupyter"></a>
-      <article class="archive-item">
-        <p class="post-meta post-meta-title"><a class="page-meta" href="/blog/jupyter/2020/02/20/test.html">Fastpages Notebook Blog Post</a>  • Feb 20, 2020</p>
-      </article>
+        <a class="category-tags-link" href="/blog/categories/#Machine Learning">Machine Learning</a>
+        
       
-  
-      <h3 id ="Machine Learning"><i class="fas fa-tags category-tags-icon"></i></i> Machine Learning</h3>
-      <a name="Machine Learning"></a>
-      <article class="archive-item">
-        <p class="post-meta post-meta-title"><a class="page-meta" href="/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html">Probability vs Likelyhood vs Maximum Likelyhood</a>  • Apr 29, 2020</p>
-      </article>
-      <article class="archive-item">
-        <p class="post-meta post-meta-title"><a class="page-meta" href="/blog/deep%20learning/machine%20learning/2020/04/26/Normalization.html">Normalization</a>  • Apr 26, 2020</p>
-      </article>
-      <article class="archive-item">
-        <p class="post-meta post-meta-title"><a class="page-meta" href="/blog/machine%20learning/2020/03/27/Linear-Regression-Scratch.html">Linear Regression from Scratch</a>  • Mar 27, 2020</p>
-      </article>
-      
-  
-      <h3 id ="Object Detection"><i class="fas fa-tags category-tags-icon"></i></i> Object Detection</h3>
-      <a name="Object Detection"></a>
-      <article class="archive-item">
-        <p class="post-meta post-meta-title"><a class="page-meta" href="/blog/object%20detection/2020/01/13/EfficientDet.html">EfficientDet: When Object Detection Meets Scalability and Efficiency</a>  • Jan 13, 2020</p>
-      </article>
-      
-  
-      <h3 id ="Statistics"><i class="fas fa-tags category-tags-icon"></i></i> Statistics</h3>
-      <a name="Statistics"></a>
-      <article class="archive-item">
-        <p class="post-meta post-meta-title"><a class="page-meta" href="/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html">Probability vs Likelyhood vs Maximum Likelyhood</a>  • Apr 29, 2020</p>
-      </article>
-      
-  
-      <h3 id ="Tensorflow"><i class="fas fa-tags category-tags-icon"></i></i> Tensorflow</h3>
-      <a name="Tensorflow"></a>
-      <article class="archive-item">
-        <p class="post-meta post-meta-title"><a class="page-meta" href="/blog/tensorflow/2020/04/08/tf.data-Creating-Data-Input-Pipelines.html">tf.data: Creating data input pipelines</a>  • Apr 8, 2020</p>
-      </article>
-      <article class="archive-item">
-        <p class="post-meta post-meta-title"><a class="page-meta" href="/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html">Image Classification with Tensorflow 2.x</a>  • May 12, 2019</p>
-      </article>
-      <article class="archive-item">
-        <p class="post-meta post-meta-title"><a class="page-meta" href="/blog/tensorflow/face%20recognition/2019/01/07/face-recognition.html">Face Recognition</a>  • Jan 7, 2019</p>
-      </article>
-      
-  
+      </p>
+    
 
+    </header>
 
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><img src="https://raw.githubusercontent.com/aniketmaurya/machine_learning/master/blog_files/2020-04-29-Probability-vs-Likelyhood/dice-min.jpg" alt="" title="Photo by Riho Kroll on Unsplash" /></p>
 
+<h1 id="article-is-in-progress-2020-04-30">Article is in progress 2020-04-30</h1>
+<h1 id="probability">Probability</h1>
+<p>Probability is the quantative measure of certainity of an event.
+Mathematically, probability $P$ for an event $E$ is defined as:</p>
 
-</div>
+<p>$P(E) = \frac{number\,of\,times\,event\,E\,occurred}{Total\,number\,of\,events}$</p>
+
+<p>Consider a fair die, possible outcomes of rolling the die can be 1 to 6. Where probability of each outcome is 1/6.
+<small>
+$P(1) = P(2) = P(3) = P(4) = P(5) = P(6) = 1/6$
+</small></p>
+
+<p><strong>What if we roll two dice together? What will be the probability that both dice will get the same digits, say 6?</strong></p>
+
+<p><small>
+$P(dice_1=6\cap dice_2=6) = P(dice_1=6) \times P(dice_2=6)=\frac{1}{6} \times \frac{1}{6}$
+</small></p>
+
+<p><strong>What if one of the dice is biased towards 6, i.e. <small>$P(dice_1=6) = 1/4\, and\, P(dice_2=6)=1/6$</small></strong></p>
+
+<p>Our probability will become <small>$P(dice_1=6\cap dice_2=6) = 1/6 \times 1/4$</small></p>
+
+<h2 id="joint-probability">Joint Probability</h2>
+<blockquote>
+  <p>Joint probability is the probability of two events occurring simultaneously.</p>
+</blockquote>
+
+<p>If the two events E1 and E2 are independent of each other then the joint probability is multiplication of P(E1) and P(E2). Rolling two dice together is an example of Joint Probability.</p>
+
+<p><small>$P(E_1\,and\,E_2) = P(E_1,E_2) = P(E_1\,given\, E_2, E_2) = P(E_2\,given\,E_1, E_1)$</small></p>
+
+<p><small>$P(A \,give\, B)$ is denoted as $P(A|B)$</small></p>
+
+<h2 id="maximum-likelihood">Maximum Likelihood</h2>
+<blockquote>
+  <p>Maximum Likelihood is used to find the normal distribution of the given data. We estimate $\mu$ and $\sigma$ for the distribution.</p>
+</blockquote>
+
+<h2 id="references">References</h2>
+<ul>
+  <li>https://towardsdatascience.com/probability-concepts-explained-maximum-likelihood-estimation-c7b4342fdbb1</li>
+</ul>
+
+  </div><a class="u-url" href="/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html" hidden></a>
+</article>
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/blog/"></data>
