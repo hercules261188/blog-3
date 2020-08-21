@@ -148,18 +148,24 @@ It provides support for Swagger UI out of the box.</p>
 
 <h3 id="a-simple-hello-world-example">A simple hello-world example</h3>
 
-<p>We first import fastapi <code class="highlighter-rouge">FastAPI</code> class and create and object. This object have many useful (parameters)[https://github.com/tiangolo/fastapi/blob/a6897963d5ff2c836313c3b69fc6062051c07a63/fastapi/applications.py#L30]. We can pass the title and description for Swagger UI.</p>
+<p>We first import fastapi <code class="highlighter-rouge">FastAPI</code> class and create and object. This class has useful <a href="https://github.com/tiangolo/fastapi/blob/a6897963d5ff2c836313c3b69fc6062051c07a63/fastapi/applications.py#L30">parameters</a>, like we can pass the title and description for Swagger UI.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
 <span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">'Hello world'</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s">'This is a hello world example'</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s">'0.0.1'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'/)</span><span class="err">
+<p>We define a function and decorate it with <code class="highlighter-rouge">@app.get</code>. This means that our api <code class="highlighter-rouge">/index</code> is a GET method. The function defined here is <strong>async</strong>, FastAPI automatically takes care of async and without async methods by creating a threadpool for the normal functions and it uses async event loop for async functions.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'/index)</span><span class="err">
 </span><span class="s">async def hello_world():</span><span class="err">
 </span><span class="s">    return "hello world"</span><span class="err">
 </span></code></pre></div></div>
 
 <h3 id="image-recognition-api">Image recognition API</h3>
+
+<p>We will create an API to classify images, we name it <code class="highlighter-rouge">predict/image</code>.
+We will use Tensorflow for creating the image classification model.</p>
+
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"/predict/image"</span><span class="p">)</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">predict_api</span><span class="p">(</span><span class="nb">file</span><span class="p">:</span> <span class="n">UploadFile</span> <span class="o">=</span> <span class="n">File</span><span class="p">(</span><span class="o">...</span><span class="p">)):</span>
     <span class="n">extension</span> <span class="o">=</span> <span class="nb">file</span><span class="o">.</span><span class="n">filename</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">"."</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="p">(</span><span class="s">"jpg"</span><span class="p">,</span> <span class="s">"jpeg"</span><span class="p">,</span> <span class="s">"png"</span><span class="p">)</span>
