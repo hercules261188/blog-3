@@ -154,17 +154,31 @@ It provides support for Swagger UI out of the box.</p>
 <span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">'Hello world'</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s">'This is a hello world example'</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s">'0.0.1'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>We define a function and decorate it with <code class="highlighter-rouge">@app.get</code>. This means that our api <code class="highlighter-rouge">/index</code> is a GET method. The function defined here is <strong>async</strong>, FastAPI automatically takes care of async and without async methods by creating a threadpool for the normal functions and it uses async event loop for async functions.</p>
+<p>We define a function and decorate it with <code class="highlighter-rouge">@app.get</code>. This means that our api <code class="highlighter-rouge">/index</code> supports GET method. The function defined here is <strong>async</strong>, FastAPI automatically takes care of async and without async methods by creating a threadpool for the normal functions and it uses async event loop for async functions.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'/index)</span><span class="err">
-</span><span class="s">async def hello_world():</span><span class="err">
-</span><span class="s">    return "hello world"</span><span class="err">
-</span></code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'/index'</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s">"hello world"</span>
+</code></pre></div></div>
 
 <h3 id="image-recognition-api">Image recognition API</h3>
 
 <p>We will create an API to classify images, we name it <code class="highlighter-rouge">predict/image</code>.
 We will use Tensorflow for creating the image classification model.</p>
+
+<blockquote>
+  <p>Blog post for <a href="https://aniketmaurya.ml/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html">Image Classification with Tensorflow</a></p>
+</blockquote>
+
+<p>First we create a function <code class="highlighter-rouge">load_model</code>, which will return a MobileNet CNN Model with pretrained weights i.e. it is already trained to classify 1000 unique category of images.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+
+<span class="k">def</span> <span class="nf">load_model</span><span class="p">():</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">applications</span><span class="o">.</span><span class="n">MobileNetV2</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="s">"imagenet"</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Model loaded"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">model</span>
+</code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"/predict/image"</span><span class="p">)</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">predict_api</span><span class="p">(</span><span class="nb">file</span><span class="p">:</span> <span class="n">UploadFile</span> <span class="o">=</span> <span class="n">File</span><span class="p">(</span><span class="o">...</span><span class="p">)):</span>
