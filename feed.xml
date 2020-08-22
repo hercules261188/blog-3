@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://aniketmaurya.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://aniketmaurya.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-08-22T00:55:27-05:00</updated><id>https://aniketmaurya.github.io/blog/feed.xml</id><title type="html">Overfitted</title><subtitle>Blogs on Machine Learning and Programming.</subtitle><entry><title type="html">Building Machine Learning API with FastAPI</title><link href="https://aniketmaurya.github.io/blog/python/2020/07/26/fastapi-tf-webapp.html" rel="alternate" type="text/html" title="Building Machine Learning API with FastAPI" /><published>2020-07-26T00:00:00-05:00</published><updated>2020-07-26T00:00:00-05:00</updated><id>https://aniketmaurya.github.io/blog/python/2020/07/26/fastapi-tf-webapp</id><content type="html" xml:base="https://aniketmaurya.github.io/blog/python/2020/07/26/fastapi-tf-webapp.html">&lt;p&gt;&lt;img src=&quot;https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png&quot; alt=&quot;&quot; title=&quot;Source- FastAPI Docs&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://aniketmaurya.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://aniketmaurya.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-08-22T05:47:42-05:00</updated><id>https://aniketmaurya.github.io/blog/feed.xml</id><title type="html">Overfitted</title><subtitle>Blogs on Machine Learning and Programming.</subtitle><entry><title type="html">Building Machine Learning API with FastAPI</title><link href="https://aniketmaurya.github.io/blog/python/2020/07/26/fastapi-tf-webapp.html" rel="alternate" type="text/html" title="Building Machine Learning API with FastAPI" /><published>2020-07-26T00:00:00-05:00</published><updated>2020-07-26T00:00:00-05:00</updated><id>https://aniketmaurya.github.io/blog/python/2020/07/26/fastapi-tf-webapp</id><content type="html" xml:base="https://aniketmaurya.github.io/blog/python/2020/07/26/fastapi-tf-webapp.html">&lt;p&gt;&lt;img src=&quot;https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png&quot; alt=&quot;&quot; title=&quot;Source- FastAPI Docs&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;FastAPI is a high-performance asynchronous framework for building APIs in Python.
 It provides support for Swagger UI out of the box.&lt;/p&gt;
@@ -164,12 +164,18 @@ Here we will return the top-2 probable class.&lt;/p&gt;
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;https://fastapi.tiangolo.com/&quot;&gt;FastAPI documentation&lt;/a&gt; is the best place to learn more about core concepts of the framework.&lt;/p&gt;
+&lt;/blockquote&gt;
+
 &lt;hr /&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
   &lt;p&gt;Hope you liked the article.&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;p&gt;Feel free to ask your questions in the comments or reach me out personally&lt;/p&gt;
 
 &lt;p&gt;👉 Twitter: &lt;a href=&quot;https://twitter.com/aniketmaurya&quot;&gt;https://twitter.com/aniketmaurya&lt;/a&gt;&lt;/p&gt;
 
