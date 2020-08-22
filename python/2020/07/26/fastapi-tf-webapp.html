@@ -121,7 +121,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -180,6 +180,44 @@ We will use Tensorflow for creating the image classification model.</p>
     <span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">applications</span><span class="o">.</span><span class="n">MobileNetV2</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="s">"imagenet"</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="s">"Model loaded"</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">model</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>We define a <code class="highlighter-rouge">predict</code> function that will accepts an image and returns the predictions.
+We resize the image to 224x224 and normalize the pixel values to be in <strong>[-1, 1]</strong>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tensorflow.keras.applications.imagenet_utils</span> <span class="kn">import</span> <span class="n">decode_predictions</span>
+</code></pre></div></div>
+<p><code class="highlighter-rouge">decode_predictions</code> is used to decode class name of the predicted object. 
+Here we will return top-2 probable class.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">Image</span><span class="o">.</span><span class="n">Image</span><span class="p">):</span>
+
+    <span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">)))[</span><span class="o">...</span><span class="p">,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">image</span> <span class="o">/</span> <span class="mf">127.5</span> <span class="o">-</span> <span class="mf">1.0</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">decode_predictions</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">image</span><span class="p">),</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">res</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">resp</span><span class="p">[</span><span class="s">"class"</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">resp</span><span class="p">[</span><span class="s">"confidence"</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="s">"{res[2]*100:0.2f} </span><span class="si">%</span><span class="s">"</span>
+
+        <span class="n">response</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">resp</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">response</span>
+</code></pre></div></div>
+
+<p>Now we will create an api <code class="highlighter-rouge">/predict/image</code> which supports file upload. We will filter the file extension to support only jpg, jpeg and png format of images.</p>
+
+<p>We will use Pillow to load the uploaded image.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">read_imagefile</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Image</span><span class="o">.</span><span class="n">Image</span><span class="p">:</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="nb">open</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="nb">file</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">image</span>
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"/predict/image"</span><span class="p">)</span>
@@ -193,6 +231,37 @@ We will use Tensorflow for creating the image classification model.</p>
     <span class="k">return</span> <span class="n">prediction</span>
 </code></pre></div></div>
 
+<p>Finally our code will look like this -</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">uvicorn</span>
+<span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span><span class="p">,</span> <span class="n">File</span><span class="p">,</span> <span class="n">UploadFile</span>
+<span class="kn">from</span> <span class="nn">starlette.responses</span> <span class="kn">import</span> <span class="n">RedirectResponse</span>
+
+<span class="kn">from</span> <span class="nn">application.components</span> <span class="kn">import</span> <span class="n">predict</span><span class="p">,</span> <span class="n">read_imagefile</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">'Tensorflow Web app Starter Pack'</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s">'&lt;h2&gt;Try this app by uploading any image with `predict/image`&lt;/h2&gt;&lt;br&gt;by Aniket Maurya'</span><span class="p">)</span>
+
+
+<span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'/'</span><span class="p">,</span> <span class="n">include_in_schema</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">RedirectResponse</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">'/docs'</span><span class="p">)</span>
+
+
+<span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"/predict/image"</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">predict_api</span><span class="p">(</span><span class="nb">file</span><span class="p">:</span> <span class="n">UploadFile</span> <span class="o">=</span> <span class="n">File</span><span class="p">(</span><span class="o">...</span><span class="p">)):</span>
+    <span class="n">extension</span> <span class="o">=</span> <span class="nb">file</span><span class="o">.</span><span class="n">filename</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">"."</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="p">(</span><span class="s">"jpg"</span><span class="p">,</span> <span class="s">"jpeg"</span><span class="p">,</span> <span class="s">"png"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">extension</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">"Image must be jpg or png format!"</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">read_imagefile</span><span class="p">(</span><span class="k">await</span> <span class="nb">file</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+    <span class="n">prediction</span> <span class="o">=</span> <span class="n">predict</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">prediction</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+    <span class="n">uvicorn</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
 <hr />
 
 <p><br /></p>
@@ -201,6 +270,8 @@ We will use Tensorflow for creating the image classification model.</p>
 </blockquote>
 
 <p>👉 <a href="https://twitter.com/aniketmaurya">Twitter</a>: <a href="https://twitter.com/aniketmaurya">https://twitter.com/aniketmaurya</a></p>
+
+<p>👉 <a href="https://linkedin.com/in/aniketmaurya">Linkedin</a>: <a href="https://linkedin.com/in/aniketmaurya">https://linkedin.com/in/aniketmaurya</a></p>
 
 <p>👉 Mail: aniketmaurya@outlook.com</p>
 
