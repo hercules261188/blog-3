@@ -148,7 +148,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#final-code">Final code</a></li>
 </ul><p><img src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" alt="" title="Source- FastAPI Docs"></p>
 
-<p>FastAPI is a high performance asynchronous framework for building APIs in Python.
+<p>FastAPI is a high-performance asynchronous framework for building APIs in Python.
 It provides support for Swagger UI out of the box.</p>
 
 <blockquote>
@@ -158,13 +158,13 @@ It provides support for Swagger UI out of the box.</p>
 <h1 id="lets-start-with-a-simple-hello-world-example">
 <a class="anchor" href="#lets-start-with-a-simple-hello-world-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lets start with a simple hello-world example</h1>
 
-<p>First we import <code class="highlighter-rouge">FastAPI</code> class and create and object <code class="highlighter-rouge">app</code>. This class has useful <a href="https://github.com/tiangolo/fastapi/blob/a6897963d5ff2c836313c3b69fc6062051c07a63/fastapi/applications.py#L30">parameters</a>, like we can pass the title and description for Swagger UI.</p>
+<p>First, we import <code class="highlighter-rouge">FastAPI</code> class and create an object <code class="highlighter-rouge">app</code>. This class has useful <a href="https://github.com/tiangolo/fastapi/blob/a6897963d5ff2c836313c3b69fc6062051c07a63/fastapi/applications.py#L30">parameters</a> like we can pass the title and description for Swagger UI.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
 <span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">'Hello world'</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s">'This is a hello world example'</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s">'0.0.1'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>We define a function and decorate it with <code class="highlighter-rouge">@app.get</code>. This means that our api <code class="highlighter-rouge">/index</code> supports GET method. The function defined here is <strong>async</strong>, FastAPI automatically takes care of async and without async methods by creating a threadpool for the normal def functions and it uses async event loop for async functions.</p>
+<p>We define a function and decorate it with <code class="highlighter-rouge">@app.get</code>. This means that our API <code class="highlighter-rouge">/index</code> supports the GET method. The function defined here is <strong>async</strong>, FastAPI automatically takes care of async and without async methods by creating a thread pool for the normal def functions and it uses an async event loop for async functions.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'/index'</span><span class="p">)</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
@@ -174,13 +174,12 @@ It provides support for Swagger UI out of the box.</p>
 <h1 id="pydantic-support">
 <a class="anchor" href="#pydantic-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pydantic support</h1>
 
-<p>One of my favourite feature offered by FastAPI is Pydantic support. We can define Pydantic models and request response will be handled by FastAPI for these models.
-Lets create a covid-19 symptom checker API to understand this.</p>
+<p>One of my favorite features offered by FastAPI is Pydantic support. We can define Pydantic models and request-response will be handled by FastAPI for these models.
+Let’s create a COVID-19 symptom checker API to understand this.</p>
 
 <h2 id="covid-19-symptom-checker-api">
 <a class="anchor" href="#covid-19-symptom-checker-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>Covid-19 symptom checker API</h2>
-<p>We create request body, it is the format in which client should send the request.</p>
-
+<p>We create a request body, it is the format in which the client should send the request. It will be used by Swagger UI.</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
 
 <span class="k">class</span> <span class="nc">Symptom</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
@@ -190,7 +189,7 @@ Lets create a covid-19 symptom checker API to understand this.</p>
     <span class="n">breathing_problem</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span>
 </code></pre></div></div>
 
-<p>Let’s create a function to assign risk level based on the inputs.</p>
+<p>Let’s create a function to assign a risk level based on the inputs.</p>
 
 <blockquote>
   <p>This is just for learning and should not be used in real life, better consult a doctor.</p>
@@ -205,13 +204,13 @@ Lets create a covid-19 symptom checker API to understand this.</p>
             <span class="k">return</span> <span class="s">'moderate risk level. THIS IS A DEMO APP'</span>
     
     <span class="k">if</span> <span class="n">symptom</span><span class="o">.</span><span class="n">breathing_problem</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s">'High risk level. THIS IS A DEMO APP'</span>
+        <span class="k">return</span> <span class="s">'High-risk level. THIS IS A DEMO APP'</span>
     
     <span class="k">return</span> <span class="s">'THIS IS A DEMO APP'</span>
 
 </code></pre></div></div>
 
-<p>Lets create the API for checking the symptoms</p>
+<p>Let’s create the API for checking the symptoms</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'/api/covid-symptom-check'</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">check_risk</span><span class="p">(</span><span class="n">symptom</span><span class="p">:</span> <span class="n">Symptom</span><span class="p">):</span>
@@ -228,7 +227,7 @@ We will use Tensorflow for creating the image classification model.</p>
   <p>Tutorial for <a href="https://aniketmaurya.ml/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html">Image Classification with Tensorflow</a></p>
 </blockquote>
 
-<p>First we create a function <code class="highlighter-rouge">load_model</code>, which will return a MobileNet CNN Model with pretrained weights i.e. it is already trained to classify 1000 unique category of images.</p>
+<p>We create a function <code class="highlighter-rouge">load_model</code>, which will return a MobileNet CNN Model with pre-trained weights i.e. it is already trained to classify 1000 unique categories of images.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
 
@@ -240,13 +239,13 @@ We will use Tensorflow for creating the image classification model.</p>
 <span class="n">model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p>We define a <code class="highlighter-rouge">predict</code> function that will accepts an image and returns the predictions.
+<p>We define a <code class="highlighter-rouge">predict</code> function that will accept an image and returns the predictions.
 We resize the image to 224x224 and normalize the pixel values to be in <strong>[-1, 1]</strong>.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">tensorflow.keras.applications.imagenet_utils</span> <span class="kn">import</span> <span class="n">decode_predictions</span>
 </code></pre></div></div>
-<p><code class="highlighter-rouge">decode_predictions</code> is used to decode class name of the predicted object. 
-Here we will return top-2 probable class.</p>
+<p><code class="highlighter-rouge">decode_predictions</code> is used to decode the class name of the predicted object. 
+Here we will return the top-2 probable class.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">Image</span><span class="o">.</span><span class="n">Image</span><span class="p">):</span>
 
@@ -267,7 +266,7 @@ Here we will return top-2 probable class.</p>
     <span class="k">return</span> <span class="n">response</span>
 </code></pre></div></div>
 
-<p>Now we will create an API <code class="highlighter-rouge">/predict/image</code> which supports file upload. We will filter the file extension to support only jpg, jpeg and png format of images.</p>
+<p>Now we will create an API <code class="highlighter-rouge">/predict/image</code> which supports file upload. We will filter the file extension to support only jpg, jpeg, and png format of images.</p>
 
 <p>We will use Pillow to load the uploaded image.</p>
 
