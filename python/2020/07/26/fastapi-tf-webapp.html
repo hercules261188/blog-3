@@ -137,18 +137,26 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" alt="" title="Source- FastAPI Docs" /></p>
-
-<blockquote>
-  <p>FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.</p>
-</blockquote>
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#lets-start-with-a-simple-hello-world-example">Lets start with a simple hello-world example</a></li>
+<li class="toc-entry toc-h1"><a href="#pydantic-support">Pydantic support</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#covid-19-symptom-checker-api">Covid-19 symptom checker API</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#image-recognition-api">Image recognition API</a></li>
+<li class="toc-entry toc-h1"><a href="#final-code">Final code</a></li>
+</ul><p><img src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" alt="" title="Source- FastAPI Docs"></p>
 
 <p>FastAPI is a high performance asynchronous framework for building APIs in Python.
 It provides support for Swagger UI out of the box.</p>
 
-<p>Source code for this blog is available <a href="https://github.com/aniketmaurya/tensorflow-web-app-starter-pack">aniketmaurya/tensorflow-fastapi-starter-pack</a></p>
+<blockquote>
+  <p>Source code for this blog is available <a href="https://github.com/aniketmaurya/tensorflow-web-app-starter-pack">aniketmaurya/tensorflow-fastapi-starter-pack</a></p>
+</blockquote>
 
-<h1 id="lets-start-with-a-simple-hello-world-example">Lets start with a simple hello-world example</h1>
+<h1 id="lets-start-with-a-simple-hello-world-example">
+<a class="anchor" href="#lets-start-with-a-simple-hello-world-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lets start with a simple hello-world example</h1>
 
 <p>First we import <code class="highlighter-rouge">FastAPI</code> class and create and object <code class="highlighter-rouge">app</code>. This class has useful <a href="https://github.com/tiangolo/fastapi/blob/a6897963d5ff2c836313c3b69fc6062051c07a63/fastapi/applications.py#L30">parameters</a>, like we can pass the title and description for Swagger UI.</p>
 
@@ -163,12 +171,14 @@ It provides support for Swagger UI out of the box.</p>
     <span class="k">return</span> <span class="s">"hello world"</span>
 </code></pre></div></div>
 
-<h1 id="pydantic-support">Pydantic support</h1>
+<h1 id="pydantic-support">
+<a class="anchor" href="#pydantic-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pydantic support</h1>
 
 <p>One of my favourite feature offered by FastAPI is Pydantic support. We can define Pydantic models and request response will be handled by FastAPI for these models.
 Lets create a covid-19 symptom checker API to understand this.</p>
 
-<h2 id="covid-19-symptom-checker-api">Covid-19 symptom checker API</h2>
+<h2 id="covid-19-symptom-checker-api">
+<a class="anchor" href="#covid-19-symptom-checker-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>Covid-19 symptom checker API</h2>
 <p>We create request body, it is the format in which client should send the request.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
@@ -208,7 +218,8 @@ Lets create a covid-19 symptom checker API to understand this.</p>
     <span class="k">return</span> <span class="n">get_risk_level</span><span class="p">(</span><span class="n">symptom</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h1 id="image-recognition-api">Image recognition API</h1>
+<h1 id="image-recognition-api">
+<a class="anchor" href="#image-recognition-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>Image recognition API</h1>
 
 <p>We will create an API to classify images, we name it <code class="highlighter-rouge">predict/image</code>.
 We will use Tensorflow for creating the image classification model.</p>
@@ -276,7 +287,8 @@ Here we will return top-2 probable class.</p>
     <span class="k">return</span> <span class="n">prediction</span>
 </code></pre></div></div>
 
-<h1 id="final-code">Final code</h1>
+<h1 id="final-code">
+<a class="anchor" href="#final-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Final code</h1>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">uvicorn</span>
 <span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span><span class="p">,</span> <span class="n">File</span><span class="p">,</span> <span class="n">UploadFile</span>
@@ -306,9 +318,9 @@ Here we will return top-2 probable class.</p>
 
 </code></pre></div></div>
 
-<hr />
+<hr>
 
-<p><br /></p>
+<p><br></p>
 <blockquote>
   <p>Hope you liked the article.</p>
 </blockquote>

@@ -1,13 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://aniketmaurya.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://aniketmaurya.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-08-22T00:38:15-05:00</updated><id>https://aniketmaurya.github.io/blog/feed.xml</id><title type="html">Overfitted</title><subtitle>Blogs on Machine Learning and Programming.</subtitle><entry><title type="html">Building Machine Learning API with FastAPI</title><link href="https://aniketmaurya.github.io/blog/python/2020/07/26/fastapi-tf-webapp.html" rel="alternate" type="text/html" title="Building Machine Learning API with FastAPI" /><published>2020-07-26T00:00:00-05:00</published><updated>2020-07-26T00:00:00-05:00</updated><id>https://aniketmaurya.github.io/blog/python/2020/07/26/fastapi-tf-webapp</id><content type="html" xml:base="https://aniketmaurya.github.io/blog/python/2020/07/26/fastapi-tf-webapp.html">&lt;p&gt;&lt;img src=&quot;https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png&quot; alt=&quot;&quot; title=&quot;Source- FastAPI Docs&quot; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.&lt;/p&gt;
-&lt;/blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://aniketmaurya.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://aniketmaurya.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-08-22T00:42:37-05:00</updated><id>https://aniketmaurya.github.io/blog/feed.xml</id><title type="html">Overfitted</title><subtitle>Blogs on Machine Learning and Programming.</subtitle><entry><title type="html">Building Machine Learning API with FastAPI</title><link href="https://aniketmaurya.github.io/blog/python/2020/07/26/fastapi-tf-webapp.html" rel="alternate" type="text/html" title="Building Machine Learning API with FastAPI" /><published>2020-07-26T00:00:00-05:00</published><updated>2020-07-26T00:00:00-05:00</updated><id>https://aniketmaurya.github.io/blog/python/2020/07/26/fastapi-tf-webapp</id><content type="html" xml:base="https://aniketmaurya.github.io/blog/python/2020/07/26/fastapi-tf-webapp.html">&lt;p&gt;&lt;img src=&quot;https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png&quot; alt=&quot;&quot; title=&quot;Source- FastAPI Docs&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;FastAPI is a high performance asynchronous framework for building APIs in Python.
 It provides support for Swagger UI out of the box.&lt;/p&gt;
 
-&lt;p&gt;Source code for this blog is available &lt;a href=&quot;https://github.com/aniketmaurya/tensorflow-web-app-starter-pack&quot;&gt;aniketmaurya/tensorflow-fastapi-starter-pack&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Source code for this blog is available &lt;a href=&quot;https://github.com/aniketmaurya/tensorflow-web-app-starter-pack&quot;&gt;aniketmaurya/tensorflow-fastapi-starter-pack&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h1 id=&quot;lets-start-with-a-simple-hello-world-example&quot;&gt;Lets start with a simple hello-world example&lt;/h1&gt;
 
