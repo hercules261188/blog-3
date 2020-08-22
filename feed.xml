@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://aniketmaurya.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://aniketmaurya.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-08-21T23:49:30-05:00</updated><id>https://aniketmaurya.github.io/blog/feed.xml</id><title type="html">Overfitted</title><subtitle>Blogs on Machine Learning and Programming.</subtitle><entry><title type="html">Machine Learning APIs with FastAPI</title><link href="https://aniketmaurya.github.io/blog/python/2020/07/26/fastapi-tf-webapp.html" rel="alternate" type="text/html" title="Machine Learning APIs with FastAPI" /><published>2020-07-26T00:00:00-05:00</published><updated>2020-07-26T00:00:00-05:00</updated><id>https://aniketmaurya.github.io/blog/python/2020/07/26/fastapi-tf-webapp</id><content type="html" xml:base="https://aniketmaurya.github.io/blog/python/2020/07/26/fastapi-tf-webapp.html">&lt;p&gt;&lt;img src=&quot;https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png&quot; alt=&quot;&quot; title=&quot;Source- FastAPI Docs&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://aniketmaurya.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://aniketmaurya.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-08-21T23:52:17-05:00</updated><id>https://aniketmaurya.github.io/blog/feed.xml</id><title type="html">Overfitted</title><subtitle>Blogs on Machine Learning and Programming.</subtitle><entry><title type="html">Machine Learning APIs with FastAPI</title><link href="https://aniketmaurya.github.io/blog/python/2020/07/26/fastapi-tf-webapp.html" rel="alternate" type="text/html" title="Machine Learning APIs with FastAPI" /><published>2020-07-26T00:00:00-05:00</published><updated>2020-07-26T00:00:00-05:00</updated><id>https://aniketmaurya.github.io/blog/python/2020/07/26/fastapi-tf-webapp</id><content type="html" xml:base="https://aniketmaurya.github.io/blog/python/2020/07/26/fastapi-tf-webapp.html">&lt;p&gt;&lt;img src=&quot;https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png&quot; alt=&quot;&quot; title=&quot;Source- FastAPI Docs&quot; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.&lt;/p&gt;
@@ -9,7 +9,7 @@ It provides support for Swagger UI out of the box.&lt;/p&gt;
 
 &lt;p&gt;Source code for this blog is available &lt;a href=&quot;https://github.com/aniketmaurya/tensorflow-web-app-starter-pack&quot;&gt;aniketmaurya/tensorflow-fastapi-starter-pack&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;a-simple-hello-world-example&quot;&gt;A simple hello-world example&lt;/h3&gt;
+&lt;h2 id=&quot;lets-start-with-a-simple-hello-world-example&quot;&gt;Lets start with a simple hello-world example&lt;/h2&gt;
 
 &lt;p&gt;First we import &lt;code class=&quot;highlighter-rouge&quot;&gt;FastAPI&lt;/code&gt; class and create and object &lt;code class=&quot;highlighter-rouge&quot;&gt;app&lt;/code&gt;. This class has useful &lt;a href=&quot;https://github.com/tiangolo/fastapi/blob/a6897963d5ff2c836313c3b69fc6062051c07a63/fastapi/applications.py#L30&quot;&gt;parameters&lt;/a&gt;, like we can pass the title and description for Swagger UI.&lt;/p&gt;
 
@@ -24,7 +24,7 @@ It provides support for Swagger UI out of the box.&lt;/p&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hello world&quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;image-recognition-api&quot;&gt;Image recognition API&lt;/h3&gt;
+&lt;h2 id=&quot;image-recognition-api&quot;&gt;Image recognition API&lt;/h2&gt;
 
 &lt;p&gt;We will create an API to classify images, we name it &lt;code class=&quot;highlighter-rouge&quot;&gt;predict/image&lt;/code&gt;.
 We will use Tensorflow for creating the image classification model.&lt;/p&gt;
@@ -92,7 +92,7 @@ Here we will return top-2 probable class.&lt;/p&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prediction&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Finally our code will look like this -&lt;/p&gt;
+&lt;h2 id=&quot;finally-our-code-will-look-like-this--&quot;&gt;Finally our code will look like this -&lt;/h2&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;uvicorn&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;fastapi&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FastAPI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UploadFile&lt;/span&gt;
@@ -130,11 +130,9 @@ Here we will return top-2 probable class.&lt;/p&gt;
   &lt;p&gt;Hope you liked the article.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;👉 &lt;a href=&quot;https://twitter.com/aniketmaurya&quot;&gt;Twitter&lt;/a&gt;: &lt;a href=&quot;https://twitter.com/aniketmaurya&quot;&gt;https://twitter.com/aniketmaurya&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;👉 Twitter: &lt;a href=&quot;https://twitter.com/aniketmaurya&quot;&gt;https://twitter.com/aniketmaurya&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;👉 &lt;a href=&quot;https://linkedin.com/in/aniketmaurya&quot;&gt;Linkedin&lt;/a&gt;: &lt;a href=&quot;https://linkedin.com/in/aniketmaurya&quot;&gt;https://linkedin.com/in/aniketmaurya&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;👉 Mail: aniketmaurya@outlook.com&lt;/p&gt;</content><author><name></name></author><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" /><media:content medium="image" url="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Probability vs Likelihood vs Maximum Likelihood</title><link href="https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html" rel="alternate" type="text/html" title="Probability vs Likelihood vs Maximum Likelihood" /><published>2020-04-29T00:00:00-05:00</published><updated>2020-04-29T00:00:00-05:00</updated><id>https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood</id><content type="html" xml:base="https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/aniketmaurya/machine_learning/master/blog_files/2020-04-29-Probability-vs-Likelyhood/dice-min.jpg&quot; alt=&quot;&quot; title=&quot;Photo by Riho Kroll on Unsplash&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;👉 Linkedin: &lt;a href=&quot;https://linkedin.com/in/aniketmaurya&quot;&gt;https://linkedin.com/in/aniketmaurya&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" /><media:content medium="image" url="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Probability vs Likelihood vs Maximum Likelihood</title><link href="https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html" rel="alternate" type="text/html" title="Probability vs Likelihood vs Maximum Likelihood" /><published>2020-04-29T00:00:00-05:00</published><updated>2020-04-29T00:00:00-05:00</updated><id>https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood</id><content type="html" xml:base="https://aniketmaurya.github.io/blog/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/aniketmaurya/machine_learning/master/blog_files/2020-04-29-Probability-vs-Likelyhood/dice-min.jpg&quot; alt=&quot;&quot; title=&quot;Photo by Riho Kroll on Unsplash&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;article-is-in-progress-2020-04-30&quot;&gt;Article is in progress 2020-04-30&lt;/h1&gt;
 &lt;h1 id=&quot;probability&quot;&gt;Probability&lt;/h1&gt;
