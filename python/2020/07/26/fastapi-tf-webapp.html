@@ -146,15 +146,17 @@ window.onload = wrap_img;
 <p>FastAPI is a high performance asynchronous framework for building APIs in Python.
 It provides support for Swagger UI out of the box.</p>
 
+<p>Source code for this blog is available <a href="https://github.com/aniketmaurya/tensorflow-web-app-starter-pack">aniketmaurya/tensorflow-fastapi-starter-pack</a></p>
+
 <h3 id="a-simple-hello-world-example">A simple hello-world example</h3>
 
-<p>We first import fastapi <code class="highlighter-rouge">FastAPI</code> class and create and object. This class has useful <a href="https://github.com/tiangolo/fastapi/blob/a6897963d5ff2c836313c3b69fc6062051c07a63/fastapi/applications.py#L30">parameters</a>, like we can pass the title and description for Swagger UI.</p>
+<p>First we import <code class="highlighter-rouge">FastAPI</code> class and create and object <code class="highlighter-rouge">app</code>. This class has useful <a href="https://github.com/tiangolo/fastapi/blob/a6897963d5ff2c836313c3b69fc6062051c07a63/fastapi/applications.py#L30">parameters</a>, like we can pass the title and description for Swagger UI.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
 <span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">'Hello world'</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s">'This is a hello world example'</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s">'0.0.1'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>We define a function and decorate it with <code class="highlighter-rouge">@app.get</code>. This means that our api <code class="highlighter-rouge">/index</code> supports GET method. The function defined here is <strong>async</strong>, FastAPI automatically takes care of async and without async methods by creating a threadpool for the normal functions and it uses async event loop for async functions.</p>
+<p>We define a function and decorate it with <code class="highlighter-rouge">@app.get</code>. This means that our api <code class="highlighter-rouge">/index</code> supports GET method. The function defined here is <strong>async</strong>, FastAPI automatically takes care of async and without async methods by creating a threadpool for the normal def functions and it uses async event loop for async functions.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'/index'</span><span class="p">)</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
@@ -167,7 +169,7 @@ It provides support for Swagger UI out of the box.</p>
 We will use Tensorflow for creating the image classification model.</p>
 
 <blockquote>
-  <p>Blog post for <a href="https://aniketmaurya.ml/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html">Image Classification with Tensorflow</a></p>
+  <p>Tutorial for <a href="https://aniketmaurya.ml/blog/tensorflow/deep%20learning/2019/05/12/image-classification-with-tf2.html">Image Classification with Tensorflow</a></p>
 </blockquote>
 
 <p>First we create a function <code class="highlighter-rouge">load_model</code>, which will return a MobileNet CNN Model with pretrained weights i.e. it is already trained to classify 1000 unique category of images.</p>
@@ -198,8 +200,9 @@ We will use Tensorflow for creating the image classification model.</p>
   <p>Hope you liked the article.</p>
 </blockquote>
 
-<p>👉 <a href="https://twitter.com/aniketmaurya">Twitter</a>: <a href="https://twitter.com/aniketmaurya">https://twitter.com/aniketmaurya</a>
-👉 Mail: aniketmaurya@outlook.com</p>
+<p>👉 <a href="https://twitter.com/aniketmaurya">Twitter</a>: <a href="https://twitter.com/aniketmaurya">https://twitter.com/aniketmaurya</a></p>
+
+<p>👉 Mail: aniketmaurya@outlook.com</p>
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
