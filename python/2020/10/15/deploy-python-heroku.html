@@ -139,18 +139,18 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <h1 id="deploy-machine-learning-web-apps-for-free">Deploy Machine Learning Web Apps for Free</h1>
 
-<h3 id="in-this-tutorial-i-will-explain-how-to-deploy-any-python-web-app-on-heroku-cloud">In this tutorial, I will explain how to deploy any Python web app on Heroku cloud.</h3>
+<p>In this tutorial, I will explain how to deploy any Python web app on Heroku cloud.</p>
 
 <p><img src="https://cdn-images-1.medium.com/max/6706/0*m45LdHFZa0noxH-0" alt="Photo by [Kevin Ku](https://unsplash.com/@ikukevk?utm_source=medium&amp;utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&amp;utm_medium=referral)" /><em>Photo by <a href="https://unsplash.com/@ikukevk?utm_source=medium&amp;utm_medium=referral">Kevin Ku</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a></em></p>
 
-<p>Deploying a Machine Learning model is a difficult task due to the requirement of large memory and powerful computation. This tutorial focuses on a simple deployment technique that can be used to deploy any Python web app for free.</p>
+<h2 id="deploying-a-machine-learning-model-is-a-difficult-task-due-to-the-requirement-of-large-memory-and-powerful-computation-this-tutorial-focuses-on-a-simple-deployment-technique-that-can-be-used-to-deploy-any-python-web-app-for-free">Deploying a Machine Learning model is a difficult task due to the requirement of large memory and powerful computation. This tutorial focuses on a simple deployment technique that can be used to deploy any Python web app for free.</h2>
 
 <blockquote>
   <p>Read my previous article to learn how to build an <a href="https://towardsdatascience.com/image-classification-api-with-tensorflow-and-fastapi-fc85dc6d39e8?source=friends_link&amp;sk=3f05ddb711a160fa4e350c150aa74a5d">“Image classification web app with FastAPI and Tensorflow”</a></p>
 </blockquote>
 
 <blockquote>
-  <h1 id="i-have-also-created-a-youtube-tutorial-on-deploying-python-app-on-heroku">I have also created a YouTube tutorial on Deploying Python app on Heroku</h1>
+  <p>I have also created a YouTube tutorial on Deploying Python app on Heroku</p>
 </blockquote>
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/9gSkdEWx_VA" frameborder="0" allowfullscreen=""></iframe></center>
@@ -159,23 +159,18 @@ window.onload = wrap_img;
 
 <p>For deploying any Python app on Heroku, we need three files- requirements.txt, runtime.txt, and Procfile.</p>
 
-<ul>
-  <li>
-    <p><strong><em>requirements.txt</em></strong> is a normal text file that contains Python packages required to run the app.</p>
-  </li>
-  <li>
-    <p><strong><em>runtime.txt</em></strong> is a text file that will contain the Python Version you want your app to run on.</p>
-  </li>
-  <li>
-    <p><em>**Procfile</em> **is will contain the command to launch your web app. For example, you can use</p>
+<p><strong>requirements.txt</strong> is a normal text file that contains Python packages required to run the app.</p>
 
-    <p># method 1
-  <code class="highlighter-rouge">python application/server/main.py</code></p>
+<p><strong>runtime.txt</strong> is a text file that will contain the Python Version you want your app to run on.</p>
 
-    <p># or uvicorn if you are deploying a uvicorn server
-  <code class="highlighter-rouge">uvicorn application.server.main:app</code></p>
-  </li>
-</ul>
+<p><strong>Procfile</strong> will contain the command to launch your web app. For example, you can use</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>method 1
+`python application/server/main.py`
+
+or uvicorn if you are deploying a uvicorn server
+`uvicorn application.server.main:app`
+</code></pre></div></div>
 
 <p>Go to your Heroku <a href="https://dashboard.heroku.com/apps">dashboard</a> then click on <strong>New</strong> and <strong>create a new app</strong></p>
 
@@ -198,10 +193,17 @@ window.onload = wrap_img;
 <p>Then Heroku will automatically start your deployment 🎉🎉
 After deployment, you can access your app from any web browser 🔥</p>
 
+<p><br /></p>
+<hr />
+
 <p>Hope this article helped you in the deployment of your web app. If you have some feedback or suggestion please let me know in the comment section.</p>
+
 <blockquote>
-  <p>Follow me on <strong>Twitter</strong>: https://twitter.com/aniketmaurya
-Subscribe to my <strong>YouTube channel:</strong> https://www.youtube.com/channel/UCRuFsj94hWecPkuEr4f5Xww</p>
+  <p>Follow me on <strong>Twitter</strong>: https://twitter.com/aniketmaurya</p>
+</blockquote>
+
+<blockquote>
+  <p>Subscribe to my <strong>YouTube channel:</strong> https://www.youtube.com/channel/UCRuFsj94hWecPkuEr4f5Xww</p>
 </blockquote>
 
   </div><!-- from https://github.com/utterance/utterances -->
