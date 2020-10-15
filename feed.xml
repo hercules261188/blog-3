@@ -1,4 +1,73 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://blog.aniketmaurya.ml/feed.xml" rel="self" type="application/atom+xml" /><link href="http://blog.aniketmaurya.ml/" rel="alternate" type="text/html" /><updated>2020-10-14T10:44:34-05:00</updated><id>http://blog.aniketmaurya.ml/feed.xml</id><title type="html">Overfitted</title><subtitle>Blogs on Machine Learning and Programming.</subtitle><entry><title type="html">Building Machine Learning API with FastAPI and Tensorflow</title><link href="http://blog.aniketmaurya.ml/python/2020/07/26/fastapi-tf-webapp.html" rel="alternate" type="text/html" title="Building Machine Learning API with FastAPI and Tensorflow" /><published>2020-07-26T00:00:00-05:00</published><updated>2020-07-26T00:00:00-05:00</updated><id>http://blog.aniketmaurya.ml/python/2020/07/26/fastapi-tf-webapp</id><content type="html" xml:base="http://blog.aniketmaurya.ml/python/2020/07/26/fastapi-tf-webapp.html">&lt;p&gt;&lt;strong&gt;This blog is also availble as YouTube tutorial.&lt;/strong&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://blog.aniketmaurya.ml/feed.xml" rel="self" type="application/atom+xml" /><link href="http://blog.aniketmaurya.ml/" rel="alternate" type="text/html" /><updated>2020-10-15T00:41:51-05:00</updated><id>http://blog.aniketmaurya.ml/feed.xml</id><title type="html">Overfitted</title><subtitle>Blogs on Machine Learning and Programming.</subtitle><entry><title type="html">Deploy Machine Learning Web Apps for Free</title><link href="http://blog.aniketmaurya.ml/python/2020/10/15/deploy-python-heroku.html" rel="alternate" type="text/html" title="Deploy Machine Learning Web Apps for Free" /><published>2020-10-15T00:00:00-05:00</published><updated>2020-10-15T00:00:00-05:00</updated><id>http://blog.aniketmaurya.ml/python/2020/10/15/deploy-python-heroku</id><content type="html" xml:base="http://blog.aniketmaurya.ml/python/2020/10/15/deploy-python-heroku.html">&lt;p&gt;&lt;strong&gt;This blog is also availble as YouTube tutorial.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://youtu.be/9gSkdEWx_VA&quot; title=&quot;Deploy Machine Learning Web Apps for Free&quot;&gt;&lt;img src=&quot;http://img.youtube.com/vi/23R2eI95S30/0.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+https://youtu.be/9gSkdEWx_VA&lt;/p&gt;
+
+&lt;h1 id=&quot;deploy-machine-learning-web-apps-for-free&quot;&gt;Deploy Machine Learning Web Apps for Free&lt;/h1&gt;
+
+&lt;p&gt;Deploy Machine Learning Web Apps for Free&lt;/p&gt;
+
+&lt;h3 id=&quot;in-this-tutorial-i-will-explain-how-to-deploy-any-python-web-app-on-heroku-cloud&quot;&gt;In this tutorial, I will explain how to deploy any Python web app on Heroku cloud.&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/6706/0*m45LdHFZa0noxH-0&quot; alt=&quot;Photo by [Kevin Ku](https://unsplash.com/@ikukevk?utm_source=medium&amp;amp;utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&amp;amp;utm_medium=referral)&quot; /&gt;&lt;em&gt;Photo by &lt;a href=&quot;https://unsplash.com/@ikukevk?utm_source=medium&amp;amp;utm_medium=referral&quot;&gt;Kevin Ku&lt;/a&gt; on &lt;a href=&quot;https://unsplash.com?utm_source=medium&amp;amp;utm_medium=referral&quot;&gt;Unsplash&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Deploying a Machine Learning model is a difficult task due to the requirement of large memory and powerful computation. This tutorial focuses on a simple deployment technique that can be used to deploy any Python web app for free.&lt;/p&gt;
+
+&lt;p&gt;Read my previous article to learn how to build an [&lt;strong&gt;“Image classification web app with FastAPI and Tensorflow”](https://towardsdatascience.com/image-classification-api-with-tensorflow-and-fastapi-fc85dc6d39e8?source=friends_link&amp;amp;sk=3f05ddb711a160fa4e350c150aa74a5d)&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;h1 id=&quot;i-have-also-created-a-youtube-tutorial-on-deploying-python-app-on-heroku&quot;&gt;I have also created a YouTube tutorial on Deploying Python app on Heroku&lt;/h1&gt;
+&lt;/blockquote&gt;
+
+&lt;center&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/9gSkdEWx_VA&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
+
+&lt;p&gt;First of all, you will need a [&lt;strong&gt;Heroku](http://heroku.com)&lt;/strong&gt; id, so go now and register for a free account.&lt;/p&gt;
+
+&lt;p&gt;For deploying any Python app on Heroku, we need three files- requirements.txt, runtime.txt, and Procfile.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;requirements.txt&lt;/em&gt;&lt;/strong&gt; is a normal text file that contains Python packages required to run the app.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;runtime.txt&lt;/em&gt;&lt;/strong&gt; is a text file that will contain the Python Version you want your app to run on.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;**Procfile&lt;/em&gt; **is will contain the command to launch your web app. For example, you can use&lt;/p&gt;
+
+    &lt;p&gt;# method 1
+  python application/server/main.py&lt;/p&gt;
+
+    &lt;p&gt;# or uvicorn if you are deploying a uvicorn server
+  uvicorn application.server.main:app&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Go to your Heroku [&lt;strong&gt;dashboard](https://dashboard.heroku.com/apps)&lt;/strong&gt; then click on &lt;strong&gt;New&lt;/strong&gt; and &lt;strong&gt;create a new app&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/5724/1*mXrC1C1oudHwF3KAwxUegg.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Enter your &lt;strong&gt;App name&lt;/strong&gt; and select the Server region that is nearest to your location and click on &lt;strong&gt;Create app&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2544/1*_r6QhIjusWh1D2NbzN_iwA.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;After you create the app, you will see the deployment methods — Heroku Git, GitHub, and Container Registry. I will use the GitHub method. For this just push your code repository to your GitHub account and then connect to GitHub on Heroku.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/3704/1*Y6f9uWQ7Nf9qXEsG6Zv0pA.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Then search the repository and connect it to your Heroku app.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/4836/1*YpVzIgY35QUqq4uS5FKcxw.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;After this, you will see a deploy button, select the branch of your Git repository that you want to be deployed, and click on &lt;strong&gt;deploy&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Then Heroku will automatically start your deployment 🎉🎉
+After deployment, you can access your app from any web browser 🔥&lt;/p&gt;
+
+&lt;p&gt;Hope this article helped you in the deployment of your web app. If you have some feedback or suggestion please let me know in the comment section.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Follow me on &lt;strong&gt;Twitter&lt;/strong&gt;: https://twitter.com/aniketmaurya
+Subscribe to my &lt;strong&gt;YouTube channel:&lt;/strong&gt; https://www.youtube.com/channel/UCRuFsj94hWecPkuEr4f5Xww&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><summary type="html">This blog is also availble as YouTube tutorial.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://cdn-images-1.medium.com/max/6706/0*m45LdHFZa0noxH-0" /><media:content medium="image" url="https://cdn-images-1.medium.com/max/6706/0*m45LdHFZa0noxH-0" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Building Machine Learning API with FastAPI and Tensorflow</title><link href="http://blog.aniketmaurya.ml/python/2020/07/26/fastapi-tf-webapp.html" rel="alternate" type="text/html" title="Building Machine Learning API with FastAPI and Tensorflow" /><published>2020-07-26T00:00:00-05:00</published><updated>2020-07-26T00:00:00-05:00</updated><id>http://blog.aniketmaurya.ml/python/2020/07/26/fastapi-tf-webapp</id><content type="html" xml:base="http://blog.aniketmaurya.ml/python/2020/07/26/fastapi-tf-webapp.html">&lt;p&gt;&lt;strong&gt;This blog is also availble as YouTube tutorial.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.youtube.com/watch?v=23R2eI95S30&quot; title=&quot;Building Image classification API with Tensorflow and FastAPI&quot;&gt;&lt;img src=&quot;http://img.youtube.com/vi/23R2eI95S30/0.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
 http://www.youtube.com/watch?v=23R2eI95S30&lt;/p&gt;
