@@ -137,39 +137,25 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <ul class="section-nav">
-<li class="toc-entry toc-h1"><a href="#deploy-machine-learning-web-apps-for-free">Deploy Machine Learning Web Apps for Free</a>
-<ul>
-<li class="toc-entry toc-h3"><a href="#in-this-tutorial-i-will-explain-how-to-deploy-any-python-web-app-on-heroku-cloud">In this tutorial, I will explain how to deploy any Python web app on Heroku cloud.</a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h1"><a href="#i-have-also-created-a-youtube-tutorial-on-deploying-python-app-on-heroku">I have also created a YouTube tutorial on Deploying Python app on Heroku</a></li>
-</ul><p><strong>This blog is also availble as YouTube tutorial.</strong></p>
+    <h1 id="deploy-machine-learning-web-apps-for-free">Deploy Machine Learning Web Apps for Free</h1>
 
-<p><a href="https://youtu.be/9gSkdEWx_VA" title="Deploy Machine Learning Web Apps for Free"><img src="http://img.youtube.com/vi/23R2eI95S30/0.jpg" alt=""></a>
-https://youtu.be/9gSkdEWx_VA</p>
+<h3 id="in-this-tutorial-i-will-explain-how-to-deploy-any-python-web-app-on-heroku-cloud">In this tutorial, I will explain how to deploy any Python web app on Heroku cloud.</h3>
 
-<h1 id="deploy-machine-learning-web-apps-for-free">
-<a class="anchor" href="#deploy-machine-learning-web-apps-for-free" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deploy Machine Learning Web Apps for Free</h1>
-
-<p>Deploy Machine Learning Web Apps for Free</p>
-
-<h3 id="in-this-tutorial-i-will-explain-how-to-deploy-any-python-web-app-on-heroku-cloud">
-<a class="anchor" href="#in-this-tutorial-i-will-explain-how-to-deploy-any-python-web-app-on-heroku-cloud" aria-hidden="true"><span class="octicon octicon-link"></span></a>In this tutorial, I will explain how to deploy any Python web app on Heroku cloud.</h3>
-
-<p><img src="https://cdn-images-1.medium.com/max/6706/0*m45LdHFZa0noxH-0" alt="Photo by [Kevin Ku](https://unsplash.com/@ikukevk?utm_source=medium&amp;utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&amp;utm_medium=referral)"><em>Photo by <a href="https://unsplash.com/@ikukevk?utm_source=medium&amp;utm_medium=referral">Kevin Ku</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a></em></p>
+<p><img src="https://cdn-images-1.medium.com/max/6706/0*m45LdHFZa0noxH-0" alt="Photo by [Kevin Ku](https://unsplash.com/@ikukevk?utm_source=medium&amp;utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&amp;utm_medium=referral)" /><em>Photo by <a href="https://unsplash.com/@ikukevk?utm_source=medium&amp;utm_medium=referral">Kevin Ku</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a></em></p>
 
 <p>Deploying a Machine Learning model is a difficult task due to the requirement of large memory and powerful computation. This tutorial focuses on a simple deployment technique that can be used to deploy any Python web app for free.</p>
 
-<p>Read my previous article to learn how to build an [<strong>“Image classification web app with FastAPI and Tensorflow”](https://towardsdatascience.com/image-classification-api-with-tensorflow-and-fastapi-fc85dc6d39e8?source=friends_link&amp;sk=3f05ddb711a160fa4e350c150aa74a5d)</strong></p>
 <blockquote>
-  <h1 id="i-have-also-created-a-youtube-tutorial-on-deploying-python-app-on-heroku">
-<a class="anchor" href="#i-have-also-created-a-youtube-tutorial-on-deploying-python-app-on-heroku" aria-hidden="true"><span class="octicon octicon-link"></span></a>I have also created a YouTube tutorial on Deploying Python app on Heroku</h1>
+  <p>Read my previous article to learn how to build an <a href="https://towardsdatascience.com/image-classification-api-with-tensorflow-and-fastapi-fc85dc6d39e8?source=friends_link&amp;sk=3f05ddb711a160fa4e350c150aa74a5d">“Image classification web app with FastAPI and Tensorflow”</a></p>
+</blockquote>
+
+<blockquote>
+  <h1 id="i-have-also-created-a-youtube-tutorial-on-deploying-python-app-on-heroku">I have also created a YouTube tutorial on Deploying Python app on Heroku</h1>
 </blockquote>
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/9gSkdEWx_VA" frameborder="0" allowfullscreen=""></iframe></center>
 
-<p>First of all, you will need a [<strong>Heroku](http://heroku.com)</strong> id, so go now and register for a free account.</p>
+<p>First of all, you will need a <a href="http://heroku.com">Heroku</a> id, so go now and register for a free account.</p>
 
 <p>For deploying any Python app on Heroku, we need three files- requirements.txt, runtime.txt, and Procfile.</p>
 
@@ -184,28 +170,28 @@ https://youtu.be/9gSkdEWx_VA</p>
     <p><em>**Procfile</em> **is will contain the command to launch your web app. For example, you can use</p>
 
     <p># method 1
-  python application/server/main.py</p>
+  <code class="highlighter-rouge">python application/server/main.py</code></p>
 
     <p># or uvicorn if you are deploying a uvicorn server
-  uvicorn application.server.main:app</p>
+  <code class="highlighter-rouge">uvicorn application.server.main:app</code></p>
   </li>
 </ul>
 
-<p>Go to your Heroku [<strong>dashboard](https://dashboard.heroku.com/apps)</strong> then click on <strong>New</strong> and <strong>create a new app</strong></p>
+<p>Go to your Heroku <a href="https://dashboard.heroku.com/apps">dashboard</a> then click on <strong>New</strong> and <strong>create a new app</strong></p>
 
-<p><img src="https://cdn-images-1.medium.com/max/5724/1*mXrC1C1oudHwF3KAwxUegg.png" alt=""></p>
+<p><img src="https://cdn-images-1.medium.com/max/5724/1*mXrC1C1oudHwF3KAwxUegg.png" alt="" /></p>
 
 <p>Enter your <strong>App name</strong> and select the Server region that is nearest to your location and click on <strong>Create app</strong></p>
 
-<p><img src="https://cdn-images-1.medium.com/max/2544/1*_r6QhIjusWh1D2NbzN_iwA.png" alt=""></p>
+<p><img src="https://cdn-images-1.medium.com/max/2544/1*_r6QhIjusWh1D2NbzN_iwA.png" alt="" /></p>
 
 <p>After you create the app, you will see the deployment methods — Heroku Git, GitHub, and Container Registry. I will use the GitHub method. For this just push your code repository to your GitHub account and then connect to GitHub on Heroku.</p>
 
-<p><img src="https://cdn-images-1.medium.com/max/3704/1*Y6f9uWQ7Nf9qXEsG6Zv0pA.png" alt=""></p>
+<p><img src="https://cdn-images-1.medium.com/max/3704/1*Y6f9uWQ7Nf9qXEsG6Zv0pA.png" alt="" /></p>
 
 <p>Then search the repository and connect it to your Heroku app.</p>
 
-<p><img src="https://cdn-images-1.medium.com/max/4836/1*YpVzIgY35QUqq4uS5FKcxw.png" alt=""></p>
+<p><img src="https://cdn-images-1.medium.com/max/4836/1*YpVzIgY35QUqq4uS5FKcxw.png" alt="" /></p>
 
 <p>After this, you will see a deploy button, select the branch of your Git repository that you want to be deployed, and click on <strong>deploy</strong>.</p>
 
