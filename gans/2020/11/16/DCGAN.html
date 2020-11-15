@@ -121,7 +121,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      4 min read
     
 </span></p>
 
@@ -187,10 +187,18 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://colab.research.google.com/github/aniketmaurya/blog/blob/master/_notebooks/2020-11-16-DCGAN.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="What-is-DCGAN?">
 <a class="anchor" href="#What-is-DCGAN?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is DCGAN?<a class="anchor-link" href="#What-is-DCGAN?"> </a>
 </h1>
-<p>GCGAN is a Deep Convolutional Generative Adversarial Network created by Alec Radford, Luke Metz and Soumith Chintala in 2016 to train Deep Generative Adversarial Networks. In the <a href="https://arxiv.org/abs/1511.06434">DCGAN paper</a>, the authors trained the network to produce fake faces of celebrities and fake bedroom images.</p>
+<p>DCGAN (Deep Convolutional Generative Adversarial Network) is created by Alec Radford, Luke Metz and Soumith Chintala in 2016 to train Deep Generative Adversarial Networks. In the <a href="https://arxiv.org/abs/1511.06434">DCGAN paper</a>, the authors trained the network to produce fake faces of celebrities and fake bedroom images.</p>
 <p>The architecture consists of two networks - Generator and Discriminator. Generator is the heart of GANs. It produces real looking fake images from random noise.</p>
 <p>Discriminator wants the real and fake image distributions to be as far as possible while the Generator wants to reduce the distance between the real and fake image distribution.
 In simple words, the Generator tries to fool the Discriminator by producing real looking images while the Discriminator tries to catch the fake images from the real ones.</p>
@@ -201,7 +209,18 @@ In simple words, the Generator tries to fool the Discriminator by producing real
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="https://raw.githubusercontent.com/aniketmaurya/ml-resources/master/images/dcgan-vector-arithmetic.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="https://raw.githubusercontent.com/aniketmaurya/ml-resources/master/images/dcgan-vector-arithmetic.png" alt="Picture from paper"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><em>Vector arithmetic for visual concepts. Source: Paper</em></td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>
@@ -257,7 +276,7 @@ All the weights initialised with Normal distribution $\mu(0, 0.02)$.</p>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><em>Generator architecture from Paper</em></td>
+<td style="text-align:center"><em>Generator architecture from the Paper</em></td>
 </tr>
 </tbody>
 </table>
@@ -453,12 +472,12 @@ All the weights initialised with Normal distribution $\mu(0, 0.02)$.</p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I would highly recommend <a href="https://www.coursera.org/specializations/generative-adversarial-networks-gans">GANs Specialization</a> on Coursera if you want to learn GANs in depth.</p>
 <h1 id="Reference">
 <a class="anchor" href="#Reference" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reference<a class="anchor-link" href="#Reference"> </a>
 </h1>
-<p>[1.] <a href="https://arxiv.org/pdf/1511.06434.pdf">UNSUPERVISED REPRESENTATION LEARNING WITH DEEP CONVOLUTIONAL GENERATIVE ADVERSARIAL NETWORKS</a></p>
+<p>[1.] <a href="https://arxiv.org/pdf/1511.06434.pdf">Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks</a></p>
 <p>[2.] <a href="https://www.coursera.org/specializations/generative-adversarial-networks-gans">Generative Adversarial Networks (GANs) Specialization</a></p>
+<p>I would highly recommend <a href="https://www.coursera.org/specializations/generative-adversarial-networks-gans">GANs Specialization</a> on Coursera if you want to learn GANs in depth.</p>
 
 </div>
 </div>
