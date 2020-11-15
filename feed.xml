@@ -1,21 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://blog.aniketmaurya.ml/feed.xml" rel="self" type="application/atom+xml" /><link href="http://blog.aniketmaurya.ml/" rel="alternate" type="text/html" /><updated>2020-11-15T03:42:53-06:00</updated><id>http://blog.aniketmaurya.ml/feed.xml</id><title type="html">Overfitted</title><subtitle>Blogs on Machine Learning and Programming.</subtitle><entry><title type="html">Deploy Machine Learning Web Apps for Free</title><link href="http://blog.aniketmaurya.ml/python/2020/10/15/deploy-python-heroku.html" rel="alternate" type="text/html" title="Deploy Machine Learning Web Apps for Free" /><published>2020-10-15T00:00:00-05:00</published><updated>2020-10-15T00:00:00-05:00</updated><id>http://blog.aniketmaurya.ml/python/2020/10/15/deploy-python-heroku</id><content type="html" xml:base="http://blog.aniketmaurya.ml/python/2020/10/15/deploy-python-heroku.html">&lt;h1 id=&quot;deploy-machine-learning-web-apps-for-free&quot;&gt;Deploy Machine Learning Web Apps for Free&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://blog.aniketmaurya.ml/feed.xml" rel="self" type="application/atom+xml" /><link href="http://blog.aniketmaurya.ml/" rel="alternate" type="text/html" /><updated>2020-11-15T03:58:28-06:00</updated><id>http://blog.aniketmaurya.ml/feed.xml</id><title type="html">Overfitted</title><subtitle>Blogs on Machine Learning and Programming.</subtitle><entry><title type="html">Deploy Machine Learning Web Apps for Free</title><link href="http://blog.aniketmaurya.ml/python/2020/10/15/deploy-python-heroku.html" rel="alternate" type="text/html" title="Deploy Machine Learning Web Apps for Free" /><published>2020-10-15T00:00:00-05:00</published><updated>2020-10-15T00:00:00-05:00</updated><id>http://blog.aniketmaurya.ml/python/2020/10/15/deploy-python-heroku</id><content type="html" xml:base="http://blog.aniketmaurya.ml/python/2020/10/15/deploy-python-heroku.html">&lt;p&gt;Do you want to deploy your Python code to web for free? Read this post to know the step-by-step procedure to host your web app for free on Heroku cloud.&lt;/p&gt;
 
-&lt;p&gt;In this tutorial, I will explain how to deploy any Python web app on Heroku cloud.&lt;/p&gt;
+&lt;!-- ![Photo by [Kevin Ku](https://unsplash.com/@ikukevk?utm_source=medium&amp;utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&amp;utm_medium=referral)](https://cdn-images-1.medium.com/max/6706/0*m45LdHFZa0noxH-0)*Photo by [Kevin Ku](https://unsplash.com/@ikukevk?utm_source=medium&amp;utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&amp;utm_medium=referral)* --&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/6706/0*m45LdHFZa0noxH-0&quot; alt=&quot;Photo by [Kevin Ku](https://unsplash.com/@ikukevk?utm_source=medium&amp;amp;utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&amp;amp;utm_medium=referral)&quot; /&gt;&lt;em&gt;Photo by &lt;a href=&quot;https://unsplash.com/@ikukevk?utm_source=medium&amp;amp;utm_medium=referral&quot;&gt;Kevin Ku&lt;/a&gt; on &lt;a href=&quot;https://unsplash.com?utm_source=medium&amp;amp;utm_medium=referral&quot;&gt;Unsplash&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;deploying-a-machine-learning-model-is-a-difficult-task-due-to-the-requirement-of-large-memory-and-powerful-computation-this-tutorial-focuses-on-a-simple-deployment-technique-that-can-be-used-to-deploy-any-python-web-app-for-free&quot;&gt;Deploying a Machine Learning model is a difficult task due to the requirement of large memory and powerful computation. This tutorial focuses on a simple deployment technique that can be used to deploy any Python web app for free.&lt;/h2&gt;
+&lt;p&gt;Deploying a Machine Learning model is a difficult task due to the requirement of large memory and powerful computation. This tutorial focuses on a simple deployment technique that can be used to deploy any Python web app for free.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Read my previous article to learn how to build an &lt;a href=&quot;https://towardsdatascience.com/image-classification-api-with-tensorflow-and-fastapi-fc85dc6d39e8?source=friends_link&amp;amp;sk=3f05ddb711a160fa4e350c150aa74a5d&quot;&gt;“Image classification web app with FastAPI and Tensorflow”&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;I have also created a YouTube tutorial on Deploying Python app on Heroku&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;If you prefer a video tutorial then click on the video below:&lt;/p&gt;
 
-&lt;center&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/9gSkdEWx_VA&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
+&lt;center&gt;&lt;iframe width=&quot;240&quot; height=&quot;180&quot; src=&quot;https://www.youtube.com/embed/9gSkdEWx_VA&quot; frameborder=&quot;10&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
 
+&lt;h1 id=&quot;step-1&quot;&gt;Step 1&lt;/h1&gt;
 &lt;p&gt;First of all, you will need a &lt;a href=&quot;http://heroku.com&quot;&gt;Heroku&lt;/a&gt; id, so go now and register for a free account.&lt;/p&gt;
 
 &lt;p&gt;For deploying any Python app on Heroku, we need three files- requirements.txt, runtime.txt, and Procfile.&lt;/p&gt;
@@ -33,6 +30,7 @@ or uvicorn if you are deploying a uvicorn server
 `uvicorn application.server.main:app`
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;h1 id=&quot;step-2&quot;&gt;Step 2&lt;/h1&gt;
 &lt;p&gt;Go to your Heroku &lt;a href=&quot;https://dashboard.heroku.com/apps&quot;&gt;dashboard&lt;/a&gt; then click on &lt;strong&gt;New&lt;/strong&gt; and &lt;strong&gt;create a new app&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/5724/1*mXrC1C1oudHwF3KAwxUegg.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
@@ -41,6 +39,7 @@ or uvicorn if you are deploying a uvicorn server
 
 &lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2544/1*_r6QhIjusWh1D2NbzN_iwA.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
+&lt;h1 id=&quot;step-3&quot;&gt;Step 3&lt;/h1&gt;
 &lt;p&gt;After you create the app, you will see the deployment methods — Heroku Git, GitHub, and Container Registry. I will use the GitHub method. For this just push your code repository to your GitHub account and then connect to GitHub on Heroku.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/3704/1*Y6f9uWQ7Nf9qXEsG6Zv0pA.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
@@ -65,9 +64,8 @@ After deployment, you can access your app from any web browser 🔥&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Subscribe to my &lt;strong&gt;YouTube channel:&lt;/strong&gt; https://www.youtube.com/channel/UCRuFsj94hWecPkuEr4f5Xww&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name></name></author><summary type="html">Deploy Machine Learning Web Apps for Free</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://cdn-images-1.medium.com/max/6706/0*m45LdHFZa0noxH-0" /><media:content medium="image" url="https://cdn-images-1.medium.com/max/6706/0*m45LdHFZa0noxH-0" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Building Machine Learning API with FastAPI and Tensorflow</title><link href="http://blog.aniketmaurya.ml/python/2020/07/26/fastapi-tf-webapp.html" rel="alternate" type="text/html" title="Building Machine Learning API with FastAPI and Tensorflow" /><published>2020-07-26T00:00:00-05:00</published><updated>2020-07-26T00:00:00-05:00</updated><id>http://blog.aniketmaurya.ml/python/2020/07/26/fastapi-tf-webapp</id><content type="html" xml:base="http://blog.aniketmaurya.ml/python/2020/07/26/fastapi-tf-webapp.html">&lt;p&gt;&lt;strong&gt;I have also created a Youtube tutorial version of this blog.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/23R2eI95S30?start=32&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><summary type="html">Do you want to deploy your Python code to web for free? Read this post to know the step-by-step procedure to host your web app for free on Heroku cloud.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://cdn-images-1.medium.com/max/6706/0*m45LdHFZa0noxH-0" /><media:content medium="image" url="https://cdn-images-1.medium.com/max/6706/0*m45LdHFZa0noxH-0" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Building Machine Learning API with FastAPI and Tensorflow</title><link href="http://blog.aniketmaurya.ml/python/2020/07/26/fastapi-tf-webapp.html" rel="alternate" type="text/html" title="Building Machine Learning API with FastAPI and Tensorflow" /><published>2020-07-26T00:00:00-05:00</published><updated>2020-07-26T00:00:00-05:00</updated><id>http://blog.aniketmaurya.ml/python/2020/07/26/fastapi-tf-webapp</id><content type="html" xml:base="http://blog.aniketmaurya.ml/python/2020/07/26/fastapi-tf-webapp.html">&lt;p&gt;&lt;em&gt;Youtube tutorial version of this blog is also available&lt;/em&gt;&lt;/p&gt;
+&lt;iframe width=&quot;240&quot; height=&quot;180&quot; src=&quot;https://www.youtube.com/embed/23R2eI95S30?start=32&quot; frameborder=&quot;10&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;FastAPI is a high-performance asynchronous framework for building APIs in Python.
 It provides support for Swagger UI out of the box.&lt;/p&gt;
@@ -76,7 +74,7 @@ It provides support for Swagger UI out of the box.&lt;/p&gt;
   &lt;p&gt;Source code for this blog is available &lt;a href=&quot;https://github.com/aniketmaurya/tensorflow-web-app-starter-pack&quot;&gt;aniketmaurya/tensorflow-fastapi-starter-pack&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h1 id=&quot;lets-start-with-a-simple-hello-world-example&quot;&gt;Lets start with a simple hello-world example&lt;/h1&gt;
+&lt;h1 id=&quot;hello-world-of-fastapi&quot;&gt;hello-world of FastAPI&lt;/h1&gt;
 
 &lt;p&gt;First, we import &lt;code class=&quot;highlighter-rouge&quot;&gt;FastAPI&lt;/code&gt; class and create an object &lt;code class=&quot;highlighter-rouge&quot;&gt;app&lt;/code&gt;. This class has useful &lt;a href=&quot;https://github.com/tiangolo/fastapi/blob/a6897963d5ff2c836313c3b69fc6062051c07a63/fastapi/applications.py#L30&quot;&gt;parameters&lt;/a&gt; like we can pass the title and description for Swagger UI.&lt;/p&gt;
 
@@ -96,7 +94,7 @@ It provides support for Swagger UI out of the box.&lt;/p&gt;
 &lt;p&gt;One of my favorite features offered by FastAPI is Pydantic support. We can define Pydantic models and request-response will be handled by FastAPI for these models.
 Let’s create a COVID-19 symptom checker API to understand this.&lt;/p&gt;
 
-&lt;h2 id=&quot;covid-19-symptom-checker-api&quot;&gt;Covid-19 symptom checker API&lt;/h2&gt;
+&lt;h1 id=&quot;covid-19-symptom-checker-api&quot;&gt;Covid-19 symptom checker API&lt;/h1&gt;
 &lt;p&gt;We create a request body, it is the format in which the client should send the request. It will be used by Swagger UI.&lt;/p&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pydantic&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BaseModel&lt;/span&gt;
 
@@ -248,9 +246,8 @@ Here we will return the top-2 probable class.&lt;/p&gt;
 
 &lt;p&gt;👉 Twitter: &lt;a href=&quot;https://twitter.com/aniketmaurya&quot;&gt;https://twitter.com/aniketmaurya&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;👉 Linkedin: &lt;a href=&quot;https://linkedin.com/in/aniketmaurya&quot;&gt;https://linkedin.com/in/aniketmaurya&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">I have also created a Youtube tutorial version of this blog.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" /><media:content medium="image" url="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Probability vs Likelihood vs Maximum Likelihood</title><link href="http://blog.aniketmaurya.ml/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html" rel="alternate" type="text/html" title="Probability vs Likelihood vs Maximum Likelihood" /><published>2020-04-29T00:00:00-05:00</published><updated>2020-04-29T00:00:00-05:00</updated><id>http://blog.aniketmaurya.ml/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood</id><content type="html" xml:base="http://blog.aniketmaurya.ml/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/aniketmaurya/machine_learning/master/blog_files/2020-04-29-Probability-vs-Likelyhood/dice-min.jpg&quot; alt=&quot;&quot; title=&quot;Photo by Riho Kroll on Unsplash&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;👉 Linkedin: &lt;a href=&quot;https://linkedin.com/in/aniketmaurya&quot;&gt;https://linkedin.com/in/aniketmaurya&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Youtube tutorial version of this blog is also available</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" /><media:content medium="image" url="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Probability vs Likelihood vs Maximum Likelihood</title><link href="http://blog.aniketmaurya.ml/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html" rel="alternate" type="text/html" title="Probability vs Likelihood vs Maximum Likelihood" /><published>2020-04-29T00:00:00-05:00</published><updated>2020-04-29T00:00:00-05:00</updated><id>http://blog.aniketmaurya.ml/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood</id><content type="html" xml:base="http://blog.aniketmaurya.ml/statistics/machine%20learning/2020/04/29/Probability-vs-Likelihood.html">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/aniketmaurya/machine_learning/master/blog_files/2020-04-29-Probability-vs-Likelyhood/dice-min.jpg&quot; alt=&quot;&quot; title=&quot;Photo by Riho Kroll on Unsplash&quot; /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;article-is-in-progress-2020-04-30&quot;&gt;Article is in progress 2020-04-30&lt;/h1&gt;
 &lt;h1 id=&quot;probability&quot;&gt;Probability&lt;/h1&gt;
 &lt;p&gt;Probability is the quantitative measure of certainty of an event.
 Mathematically, probability $P$ for an event $E$ is defined as:&lt;/p&gt;

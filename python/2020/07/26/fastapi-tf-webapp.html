@@ -138,17 +138,13 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
-<li class="toc-entry toc-h1"><a href="#lets-start-with-a-simple-hello-world-example">Lets start with a simple hello-world example</a></li>
-<li class="toc-entry toc-h1"><a href="#pydantic-support">Pydantic support</a>
-<ul>
-<li class="toc-entry toc-h2"><a href="#covid-19-symptom-checker-api">Covid-19 symptom checker API</a></li>
-</ul>
-</li>
+<li class="toc-entry toc-h1"><a href="#hello-world-of-fastapi">hello-world of FastAPI</a></li>
+<li class="toc-entry toc-h1"><a href="#pydantic-support">Pydantic support</a></li>
+<li class="toc-entry toc-h1"><a href="#covid-19-symptom-checker-api">Covid-19 symptom checker API</a></li>
 <li class="toc-entry toc-h1"><a href="#image-recognition-api">Image recognition API</a></li>
 <li class="toc-entry toc-h1"><a href="#final-code">Final code</a></li>
-</ul><p><strong>I have also created a Youtube tutorial version of this blog.</strong></p>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/23R2eI95S30?start=32" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</ul><p><em>Youtube tutorial version of this blog is also available</em></p>
+<iframe width="240" height="180" src="https://www.youtube.com/embed/23R2eI95S30?start=32" frameborder="10" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
 <p>FastAPI is a high-performance asynchronous framework for building APIs in Python.
 It provides support for Swagger UI out of the box.</p>
@@ -157,8 +153,8 @@ It provides support for Swagger UI out of the box.</p>
   <p>Source code for this blog is available <a href="https://github.com/aniketmaurya/tensorflow-web-app-starter-pack">aniketmaurya/tensorflow-fastapi-starter-pack</a></p>
 </blockquote>
 
-<h1 id="lets-start-with-a-simple-hello-world-example">
-<a class="anchor" href="#lets-start-with-a-simple-hello-world-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lets start with a simple hello-world example</h1>
+<h1 id="hello-world-of-fastapi">
+<a class="anchor" href="#hello-world-of-fastapi" aria-hidden="true"><span class="octicon octicon-link"></span></a>hello-world of FastAPI</h1>
 
 <p>First, we import <code class="highlighter-rouge">FastAPI</code> class and create an object <code class="highlighter-rouge">app</code>. This class has useful <a href="https://github.com/tiangolo/fastapi/blob/a6897963d5ff2c836313c3b69fc6062051c07a63/fastapi/applications.py#L30">parameters</a> like we can pass the title and description for Swagger UI.</p>
 
@@ -179,8 +175,8 @@ It provides support for Swagger UI out of the box.</p>
 <p>One of my favorite features offered by FastAPI is Pydantic support. We can define Pydantic models and request-response will be handled by FastAPI for these models.
 Let’s create a COVID-19 symptom checker API to understand this.</p>
 
-<h2 id="covid-19-symptom-checker-api">
-<a class="anchor" href="#covid-19-symptom-checker-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>Covid-19 symptom checker API</h2>
+<h1 id="covid-19-symptom-checker-api">
+<a class="anchor" href="#covid-19-symptom-checker-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>Covid-19 symptom checker API</h1>
 <p>We create a request body, it is the format in which the client should send the request. It will be used by Swagger UI.</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
 
