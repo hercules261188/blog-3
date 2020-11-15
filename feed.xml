@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://blog.aniketmaurya.ml/feed.xml" rel="self" type="application/atom+xml" /><link href="http://blog.aniketmaurya.ml/" rel="alternate" type="text/html" /><updated>2020-11-15T03:58:28-06:00</updated><id>http://blog.aniketmaurya.ml/feed.xml</id><title type="html">Overfitted</title><subtitle>Blogs on Machine Learning and Programming.</subtitle><entry><title type="html">Deploy Machine Learning Web Apps for Free</title><link href="http://blog.aniketmaurya.ml/python/2020/10/15/deploy-python-heroku.html" rel="alternate" type="text/html" title="Deploy Machine Learning Web Apps for Free" /><published>2020-10-15T00:00:00-05:00</published><updated>2020-10-15T00:00:00-05:00</updated><id>http://blog.aniketmaurya.ml/python/2020/10/15/deploy-python-heroku</id><content type="html" xml:base="http://blog.aniketmaurya.ml/python/2020/10/15/deploy-python-heroku.html">&lt;p&gt;Do you want to deploy your Python code to web for free? Read this post to know the step-by-step procedure to host your web app for free on Heroku cloud.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://blog.aniketmaurya.ml/feed.xml" rel="self" type="application/atom+xml" /><link href="http://blog.aniketmaurya.ml/" rel="alternate" type="text/html" /><updated>2020-11-15T04:02:32-06:00</updated><id>http://blog.aniketmaurya.ml/feed.xml</id><title type="html">Aniket Maurya</title><subtitle>Blogs on Machine Learning and Programming.</subtitle><entry><title type="html">Deploy Machine Learning Web Apps for Free</title><link href="http://blog.aniketmaurya.ml/python/2020/10/15/deploy-python-heroku.html" rel="alternate" type="text/html" title="Deploy Machine Learning Web Apps for Free" /><published>2020-10-15T00:00:00-05:00</published><updated>2020-10-15T00:00:00-05:00</updated><id>http://blog.aniketmaurya.ml/python/2020/10/15/deploy-python-heroku</id><content type="html" xml:base="http://blog.aniketmaurya.ml/python/2020/10/15/deploy-python-heroku.html">&lt;p&gt;Do you want to deploy your Python code to web for free? Read this post to know the step-by-step procedure to host your web app for free on Heroku cloud.&lt;/p&gt;
 
 &lt;!-- ![Photo by [Kevin Ku](https://unsplash.com/@ikukevk?utm_source=medium&amp;utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&amp;utm_medium=referral)](https://cdn-images-1.medium.com/max/6706/0*m45LdHFZa0noxH-0)*Photo by [Kevin Ku](https://unsplash.com/@ikukevk?utm_source=medium&amp;utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&amp;utm_medium=referral)* --&gt;
 
@@ -35,10 +35,12 @@ or uvicorn if you are deploying a uvicorn server
 
 &lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/5724/1*mXrC1C1oudHwF3KAwxUegg.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Enter your &lt;strong&gt;App name&lt;/strong&gt; and select the Server region that is nearest to your location and click on &lt;strong&gt;Create app&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+Enter your &lt;strong&gt;App name&lt;/strong&gt; and select the Server region that is nearest to your location and click on &lt;strong&gt;Create app&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2544/1*_r6QhIjusWh1D2NbzN_iwA.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h1 id=&quot;step-3&quot;&gt;Step 3&lt;/h1&gt;
 &lt;p&gt;After you create the app, you will see the deployment methods — Heroku Git, GitHub, and Container Registry. I will use the GitHub method. For this just push your code repository to your GitHub account and then connect to GitHub on Heroku.&lt;/p&gt;
 
